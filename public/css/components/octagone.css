@@ -1,0 +1,76 @@
+
+@supports not (-webkit-clip-path: polygon(56% 0, 92% 22%, 100% 55%, 79% 91%, 42% 100%, 8% 81%, 0 43%, 20% 10%))  {
+                
+    .img-container{
+        border-radius: 50%;
+        position: relative;
+        width: calc(100% - 16px);
+        margin-left: 8px;
+        margin-top: 8px;
+    }
+    .img-container > img{
+        border-radius: 50%;
+    }
+    #partner-list .active .active .img-border{
+        display: none !important;
+    }
+    .img-border-hover{
+        display: none !important;
+    }
+    .img-border{
+        display: block !important;
+    }
+    #partner-list .active .active .img-border-hover{
+        display: block !important;
+    }
+}
+
+@supports(-webkit-clip-path: polygon(56% 0, 92% 22%, 100% 55%, 79% 91%, 42% 100%, 8% 81%, 0 43%, 20% 10%)) or (clip-path: polygon(56% 0, 92% 22%, 100% 55%, 79% 91%, 42% 100%, 8% 81%, 0 43%, 20% 10%)){
+    .img-border, .img-border-hover{
+        display: none !important;
+    }    
+    div.partner-clip-path{
+        -webkit-clip-path: polygon(56% 0, 92% 22%, 100% 55%, 79% 91%, 42% 100%, 8% 81%, 0 43%, 20% 10%);
+        clip-path: polygon(56% 0, 92% 22%, 100% 55%, 79% 91%, 42% 100%, 8% 81%, 0 43%, 20% 10%);
+        width: 150px;
+        height: 150px;
+        background-image: linear-gradient(to bottom right, rgb(182, 144, 69) , rgb(254, 232, 183));
+        position:relative;
+        margin:auto;
+    
+    }
+    div.partner-clip-path:hover, .active > div.partner-clip-path{
+        background-image: linear-gradient(to bottom right, rgb(15, 183, 255) , rgb(210, 213, 255));
+    }
+    div.partner-clip-path > div.img-container{
+        width: 90%;
+        height: 90%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        overflow:hidden;
+        -webkit-clip-path: polygon(56% 0, 92% 22%, 100% 55%, 79% 91%, 42% 100%, 8% 81%, 0 43%, 20% 10%);
+        clip-path: polygon(56% 0, 92% 22%, 100% 55%, 79% 91%, 42% 100%, 8% 81%, 0 43%, 20% 10%);
+    }
+    div.partner-clip-path > div.img-container > img{
+        width: 120%;
+        height: 120%;
+        max-width:120% !important;
+        transform:translateX(-10%) translateY(-10%);
+        z-index: 2;
+    }
+    div.partner-clip-path > div.img-container > .img-overlay{
+        width: 100%;
+        height: 100%;
+        left: 0px;
+        top: 0px;
+        position:absolute;
+        background-color:rgba(0,0,0, 0);
+        z-index: 1;
+    }
+    div.partner-clip-path > div.img-container > div.img-overlay:hover{
+        background-color:rgba(0,0,0,0.4);
+        cursor: pointer;
+    }
+}

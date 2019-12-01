@@ -1,0 +1,313 @@
+/** announce panel **/
+.announce-panel .card{
+    height: 400px;
+    background: #FFF;
+}
+.announce-panel .card-header{
+    width: 95%;
+    margin:auto;
+    background-color:#000 !important;
+    color: #FFF !important;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 5px;
+}
+.announce-panel {
+    padding: 10px;
+    opacity: 1.0;
+}
+.announce-title{
+    color:#999;
+    font-weight: 600 !important;
+}
+.announce-content{
+    color:rgb(49, 25, 15);
+    font-size: 14px;
+    font-weight: 800;
+}
+.announce-date{
+    color: rgb(117, 112, 75);
+    font-size: 12px; 
+    font-weight: 500;
+}
+.announce-panel .list-group-item{
+    background-color:transparent;
+    border: 0px solid;
+    border-bottom: 2px solid #AAA;
+    padding: 3px;
+}
+.announce-panel .card-body{
+    padding: 10px !important;
+}
+/* announce panel end */
+.diask-product-section{
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+    background-color:#FFF;
+    padding: 30px;
+    overflow: auto;
+  }
+.sidebar{
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+    margin-right: 20px;
+}
+.sidebar-container{
+    float: left;
+    width: 25%;
+    padding: 0px !important;
+}
+.product-panel-container{
+    /*
+    width: calc(75% - 40px);
+    float: right;
+    margin-right: 10px;
+    */
+}
+.product-container{
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
+    margin-left: 0px !important;
+}
+
+.product-sidebar-title{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px;
+    border-bottom: 1px solid #AAA;
+}
+.product-area-title, .product-category-title{
+    font-size: 14px;
+    color: #2196F3;
+    font-weight: bold;
+}
+.category-selection{
+    margin-top: 30px;
+}
+
+.product-item{
+    padding: 30px;
+}
+.product-item img{
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+}
+.product-item button{
+    text-align: center;
+    width: 100%;
+    background-color:#888;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.product-item button a{
+    color:#000;
+}
+.lds-roller{
+    position:relative !important;
+    left:50% !important;
+    transform:translateX(-50%);
+}
+.side-product-container{
+    position:relative;
+    width:100%;
+    /*padding: 5px;*/
+    /*overflow:auto;*/
+}
+
+/** advertise **/
+.advertise-bubble-section{
+    position:relative;
+    overflow:hidden;
+}
+.advertise-text{
+    padding: 30px; 
+    text-align:center; 
+    border-radius:20px; 
+    /*position: absolute; */
+    /*left:50%; 
+    margin-left:-30%; 
+    */
+    /*
+    top: 50%; 
+    transform: translateY(-50%); 
+    */
+    background-color:rgba(0,0,0,0.6); 
+    width: 100%; 
+    word-wrap:break-word;
+    z-index: 100;
+    color:#FFF;
+}
+.advertise-title{
+    position:absolute; 
+    left: 50%; 
+    border-radius:30px; 
+    transform: translateX(-50%) translateY(-50%); 
+    top:0px; 
+    background-color:rgb(55, 122, 182); 
+    color:#FFF; 
+    font-weight:bold; 
+    width:30%; 
+    padding:10px;
+
+}
+/** bubbles **/
+@keyframes moving-bottom2top {
+    0% {margin-top: 100%;}
+    100% {margin-top: -100%;}
+}
+@keyframes moving-left2right{
+    0% { margin-left:0px;}
+    100% {margin-left:50px;}
+}
+.advertise-section > img{
+    z-index:-2;
+}
+.bubble.x1{
+    animation:moving-bottom2top 25s linear infinite, moving-left2right 2s ease-in-out 1s infinite alternate;
+    width:10%;
+    position:absolute;
+    left: 10%;
+    transform:translateX(-50%);
+    z-index:1 !important;
+    top: 0px;
+}
+.bubble.x2{
+    animation:moving-bottom2top 25s linear infinite, moving-left2right 2s ease-in-out 2s infinite alternate;
+    width:10%;
+    position:absolute;
+    left: 90%;
+    transform:translateX(-50%);
+    z-index:1 !important;
+    top: 0px;
+}
+
+/* search box */
+.searchbox #cover{
+    background-color:#AAA;
+}
+
+/* responsive */
+@media only screen and (max-width: 767px){
+    div.become-partner > div.row > div.col-md-6:nth-of-type(1){
+        display:none;
+    }
+
+    div.product-container > div.product-item{
+        padding: 15px;
+    }
+    div.product-container img{
+        height: auto !important;
+    }
+    div.product-container > div.product-item > div:nth-of-type(2){
+        padding: 5px !important;
+        margin-top: 10px !important;
+    }
+    div.promote-packages-container > div{
+        border-right: 0px solid !important;
+    }
+
+    div.advertise-section div.advertise-text div.advertise-title{
+        width: auto !important;
+    }
+}
+.become-partner img{
+    width: 40% !important;
+}
+
+@media only screen and (min-width: 950px)
+{
+    div.mobile-sidebar-container{
+        display:none;
+    }
+}
+@media only screen and (max-width: 950px)
+{
+    div.mobile-sidebar-container{
+        display:block;
+        padding-bottom: 30px;
+    }
+}
+@media only screen and (max-width: 767px)
+{
+    
+    .promote-packages-container .item img{
+        height: 201px;
+    }
+}
+
+.promote-packages-container > div{
+    border-right: 0px solid !important;
+    border-bottom: 0px solid !important;
+}
+
+.promote-packages-container .item{
+    padding: 30px;
+}
+
+/* discount carousel border*/
+@media only screen and (min-width: 500px)
+{
+    .promote-packages-container .owl-item{
+        border-right: 1px solid #FFF;
+    }
+    .no-border{
+        border-right: 0px solid !important;
+    }
+}
+
+.amazingcarousel-flipout{
+    height: 209px;
+    position: relative;
+}
+.amazingcarousel-flipout > img{
+    max-height: 209px;
+    position: relative;;
+    top: 50%;
+    transform: translateY(-50%);
+    height: auto !important;
+}
+
+.announce-panel > .card{
+    border-radius: 10px;
+    -moz-box-shadow: 5px 5px 5px 5px rgba(96, 96, 96, 0.1); 	
+    -webkit-box-shadow: 5px 5px 5px 5px rgba(96, 96, 96, 0.1); 	
+    box-shadow: 5px 5px 5px 5px rgba(96, 96, 96, 0.1); 	    
+}
+.card{
+    border: 1px solid rgba(0, 0, 0, 0.16);
+}
+.card-body{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+}
+.card-body::-webkit-scrollbar {
+    width: 6px;
+}
+.card-body::-webkit-scrollbar-button {
+    width: 6px;
+    display: block;
+    height: 100%;
+}
+.card-body::-webkit-scrollbar-thumb {
+    width: 6px;
+    border-radius: 4px !important;
+    background-color: #d9d6d6;
+    cursor: pointer;
+}
+
+.radio-btn-container input:checked ~ .checkmark{
+    background-color: #DB831F !important; 
+}
+.searchbox #cover{
+    background-color: #DB831F;
+}
+
+#preloader{
+    background-color: #DB831F !important;
+  }

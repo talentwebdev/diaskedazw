@@ -1,0 +1,52 @@
+
+.head-count .num {    
+    background-repeat: repeat-x;
+    background-position: left top;
+    -moz-box-shadow: 1px 1px 0 #c9c9c9;
+    -webkit-box-shadow: 1px 1px 0 #c9c9c9;
+    box-shadow: 1px 1px 0 #c9c9c9;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 6px 0;
+    width: 20px;
+    line-height: 1em;
+    margin: 0 3px;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    font-family: bebas_neuebold,sans-serif;
+    color: #2196F3;
+}
+.head-count .num:before {
+    -moz-box-shadow: -1px 1px 0 #c9c9c9 inset;
+    -webkit-box-shadow: -1px 1px 0 #c9c9c9 inset;
+    box-shadow: -1px 1px 0 #c9c9c9 inset;
+    background: #fff;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 0;
+    margin: -2px 0 0;
+    position: absolute;
+    top: 50%;
+    width: 3px;
+}
+.head-count .num:after {
+    -moz-box-shadow: 1px 1px 0 #c9c9c9 inset;
+    -webkit-box-shadow: 1px 1px 0 #c9c9c9 inset;
+    box-shadow: 1px 1px 0 #c9c9c9 inset;
+    background: #fff;
+    content: "";
+    display: block;
+    height: 4px;
+    right: -1px;
+    margin: -2px 0 0;
+    position: absolute;
+    top: 50%;
+    width: 3px;
+}
+.head-count .num:nth-last-of-type(3n+3) {
+/*    margin-left: 20px; */
+}

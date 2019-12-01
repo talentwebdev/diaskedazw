@@ -1,0 +1,108 @@
+.uploadimage.selectedImage .imgPreview{
+    display: block;
+    margin: auto;
+}
+.uploadimage.selectedImage .fileinput-button{
+    display: none;
+}
+.uploadimage .imgPreview{
+    display: none;
+}
+.uploadimage .fileinput-button{
+    display: block;
+}
+.size-container{
+    background-color:#AAA;
+    border-radius:5px;
+    padding: 10px;
+    margin-left: 15px;  
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  .inputfile + label {
+    width: 200px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+  }
+  .inputfile-1 + label {
+    color: #ffffff;
+    background-color: #32c5d2;
+  }
+.upload-drop-zone {
+  height: 200px;
+  border-width: 2px;
+  margin-bottom: 50px;
+  margin-top:20px;
+}
+
+/* skin.css Style*/
+.upload-drop-zone {
+  color: #ccc;
+  border-style: dashed;
+  border-color: #ccc;
+  text-align: center
+}
+.upload-drop-zone.drop {
+  color: #222;
+  border-color: #222;
+}
+  #img-upload{
+      width: 100%;
+  }
+
+
+  .product-container{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+.size-container{
+  padding-right: 20px;
+  position:relative;
+}
+.fa-times{
+  position: absolute;
+  right: 5px;
+  left: auto;
+  top: 5px;
+}
+.overview-container{
+  position:relative;
+}
+
+
+.price-panel{
+  text-align:center;
+}
+.price-panel .ellin-image{
+  width: 30px;
+}
+
+
+.bottom-align{
+  position: relative;
+  top: 100%;
+  transform: translateY(-100%);
+}
+.btn{
+  margin: 0;
+}
+.dataTables_wrapper.dt-bootstrap4{
+  width: 100%;
+}
+#preloader{
+  background-color: #DB831F !important;
+}

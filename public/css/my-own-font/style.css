@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?jn2l0r');
+  src:  url('fonts/icomoon.eot?jn2l0r#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?jn2l0r') format('truetype'),
+    url('fonts/icomoon.woff?jn2l0r') format('woff'),
+    url('fonts/icomoon.svg?jn2l0r#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+span {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mo-home:before {
+  content: "\e903";
+}
+.icon-mo-Profile:before {
+  content: "\e900";
+}
+.icon-mo-service:before {
+  content: "\e901";
+}
+.icon-mo-Football:before {
+  content: "\e902";
+}
+.icon-mo-Psychology:before {
+  content: "\e904";
+}
+.icon-mo-Sports_Coach:before {
+  content: "\e905";
+}
+.icon-mo-Sports_Equipment:before {
+  content: "\e906";
+}
+.icon-mo-Sports-apparel:before {
+  content: "\e907";
+}
+.icon-mo-Sports_Tennis:before {
+  content: "\e908";
+}

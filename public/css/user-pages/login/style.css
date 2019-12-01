@@ -1,0 +1,277 @@
+
+.site-slides{
+    margin-top: 30px !important;
+}
+.video-section-area{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.video-section-area .video-title{
+    color: #FFF !important;
+}
+.video-section-area .video-title:hover{
+    color: rgb(153, 217, 234) !important;
+}
+
+.section-title{
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+.video-title{
+    cursor: pointer;
+    color: #444;
+}
+.video-title:hover{
+    color: rgb(200, 100, 255) !important;
+}
+
+.article-section-area{
+    padding: 30px;
+}
+
+.circle-mall-section{
+    overflow: hidden;
+    padding-top: 40px;
+    width: 90%;
+    background-color:#FFF;
+    margin: auto;   
+}
+.package-slide-text{
+    position:absolute;
+    right: 20%; 
+    background-color:#FFF; 
+    bottom: 30px;
+    padding: 10px;
+    border-radius: 3px 3px 0px 0px;
+    padding-top: 0px;
+}
+
+.notification{
+    width:20%; 
+    margin: auto; 
+    height: 80%; 
+    border-radius: 20px;     
+}
+.notification .card-header{
+    text-align:center; 
+    width:95%; 
+    margin:auto; 
+    margin-top: 10px; 
+    border-radius:10px; 
+}
+.notification .card-body div{
+    border-bottom: solid #eee;
+}
+.box-1 .card-header{    
+    background-color: rgb(0, 64, 0) !important;
+    color:#FFF !important;
+    font-weight:700 !important;
+}
+.box-1 .card-body{
+    
+}
+.box-1{
+    margin-top: 30px; 
+    background-color: rgb(255, 255, 255);
+}
+.box-2{
+    margin-top: 60px;
+    background-color: rgb(255, 255, 255);
+}
+.box-2 .card-header{    
+    background-color: rgb(97, 174, 237) !important;
+    color:#FFF !important;
+    font-weight:700 !important;
+}
+.box-2 .card-body{
+    
+}
+.box-3{
+    margin-top: 30px;
+    background-color: rgb(255, 255, 255);
+}
+.box-3 .card-header{    
+    background-color: rgb(139, 7, 80) !important;
+    color:#FFF !important;
+    font-weight:700 !important;
+}
+.box-3 .card-body{
+    
+}
+
+
+.partners-section-child{
+    width: 90%;
+    margin:auto;
+    position:relative;
+    background-color:#FFF;
+    padding-bottom: 40px;
+}
+.partners-section-child .section-title{
+    position: absolute;
+    padding: 40px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background-color:#FFF;
+    font-weight: bold;
+    border-radius: 5px 5px 0px 0px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+}
+/** video carousel **/
+.video-gallery-thumbnail{
+    margin-bottom: 30px;
+}
+.video-gallery-thumbnail .video-poster-img{
+    border-radius: 2px;
+}
+.video-gallery-thumbnail .video-poster-img:hover{
+    
+    opacity: 0.2;
+}
+.video-poster-img-container{
+    position: relative;
+}
+.video-poster-img-container .video-poster-img-video{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-image: url(http://localhost/laravel/public//plugins/carouselengine/playvideo-64-64-0.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+.video-poster-img-container .video-poster-img-video:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.video-gallery-thumbnail .video-caption{
+    padding: 26px 30px;
+    text-align: center;
+}
+.video-gallery-thumbnail .video-caption .video-caption-description{
+    color: #7b7d7d;
+    font-size: 12px;
+    margin: 0;
+}
+.video-gallery-thumbnail .video-caption .video-caption-title{
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+/* responsive */
+/** welcome slide board **/
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    #loginPanel > div.card > div.header,
+    #loginPanel > div.card > div.card-body label,
+    #loginPanel > div.card > div.card-body input
+    {
+        font-size: 12px;
+    }
+    #loginPanel > div.card > div.card-body{
+        padding-top:10px;
+        padding-bottom:0px;
+    }
+    #loginPanel > div.card > div.card-body .form-group{
+        margin-bottom:5px;
+    }
+    #loginPanel > div.card > div.card-body button{
+        font-size: 10px;
+        padding: 5px !important;
+    }
+    
+}
+/** article slide **/
+@media only screen and (max-width: 767px) {
+    .article-slides-container > h2.section-title{
+        font-size: 24px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .article-slides-container > h2.section-title{
+        font-size: 18px;
+    }
+    .article-slides-container{
+        width: 100% !important;
+        padding: 10px !important;
+        padding-top: 20px !important;
+    }
+    .article-slides-container .article-panel h2.card-title{
+        font-size: 14px;
+    }
+    .article-slides-container .article-panel p.card-text{
+        font-size: 12px;
+    }
+    .article-section-area{
+        padding: 15px !important;
+
+    }
+}
+/* service-area */
+@media only screen and (max-width: 500px){
+    #service-latest-article > h2.section-title{
+        font-size: 20px;
+    }
+    #service-latest-article > p{
+        font-size: 12px;
+    }
+}
+
+
+/** announce panel **/
+.announce-panel .card{
+    height: 400px;
+    background: #000;
+}
+.announce-panel .card-header{
+    width: 95%;
+    margin:auto;
+    background-color: rgb(224, 216, 205) !important;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 5px;
+}
+.announce-panel {
+    padding: 10px;
+}
+.announce-title{
+    color:#FFF;
+    font-weight: 600 !important;
+}
+.announce-content{
+    color:rgb(49, 25, 15);
+    font-size: 14px;
+    font-weight: 400;
+}
+.announce-date{
+    color: rgb(117, 112, 75);
+    font-size: 12px; 
+    font-weight: 500;
+}
+.announce-panel .list-group-item{
+    background-color:transparent;
+    border-bottom: 2px solid #FFF;
+    padding: 3px;
+}
+.announce-panel .card-body{
+    padding: 10px !important;
+    overflow-y: auto;
+}
+
+.announce-panel .card-body::-webkit-scrollbar {
+    width: 6px;
+}
+.announce-panel .card-body::-webkit-scrollbar-button {
+    width: 6px;
+    display: block;
+    height: 100%;
+}
+.announce-panel .card-body::-webkit-scrollbar-thumb {
+    width: 6px;
+    border-radius: 4px !important;
+    background-color: #d9d6d6;
+    cursor: pointer;
+}
+/** announce panel end **/

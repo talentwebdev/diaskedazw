@@ -1,0 +1,133 @@
+
+#carousel .package-info{
+  display:none;
+}
+#carousel .selected .package-info{
+  display: block !important;
+}
+#carousel {
+  height: 310px;
+  overflow: hidden;
+  width: 90%;
+  background-color:#FFF;
+  padding:30px;
+  margin:auto;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+#carousel div {
+  position: absolute;
+  transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+  opacity: 1;
+}
+#carousel div img {
+  width: 200px;
+  transition: width 1s;
+}
+#carousel div.hideLeft {
+  left: 0%;
+  opacity: 0;
+  transform: translateX(-50%);
+}
+#carousel div.hideLeft img {
+  width: 100px;
+}
+#carousel div.hideRight {
+  left: 100%;
+  opacity: 0;
+  transform: translateX(-50%);
+}
+#carousel div.hideRight img {
+  width: 100px;
+}
+#carousel div.prev {
+  left: 30%;
+  transform:  translateX(-50%);
+}
+#carousel div.prev img {
+  width: 150px;
+}
+#carousel div.prevLeftSecond {
+  z-index: 4;
+  left: 15%;
+  transform: translateX(-50%);
+  opacity: 0.7;
+}
+#carousel div.prevLeftSecond img {
+  width: 100px;
+}
+#carousel div.selected {
+  z-index: 10;
+  left: 50%;
+  transform: translateY(0px) translateX(-50%);
+}
+#carousel a.right-button{
+  z-index:1000;
+}
+#carousel a.left-button{
+  z-index:1000;
+}
+#carousel div.next {
+  left: 70%;
+  transform:  translateX(-50%);
+}
+#carousel div.next img {
+  width: 150px;
+}
+#carousel div.nextRightSecond {
+  z-index: 4;
+  left: 85%;
+  transform:  translateX(-50%);
+  opacity: 0.7;
+}
+#carousel div.nextRightSecond img {
+  width: 100px;
+}
+
+.buttons {
+  position: fixed;
+  left: 50%;
+  bottom: 10px;
+}
+
+@media only screen and (max-width: 767px){
+  #carousel div.nextRightSecond, #carousel div.prevLeftSecond{
+    opacity: 0 !important;
+  }
+  
+  
+  
+  #carousel div.nextRightSecond > img, #carousel div.prevLeftSecond > img{
+    width: 50px !important;
+  }
+  #carousel div.next > img, #carousel div.prev > img{
+    width: 50px !important;
+  }
+  #carousel div.selected > img{
+    width: 100px !important;
+  }
+  #carousel div.prev{
+    transform: translateX(-100%) !important;
+    width: 100px;
+  }
+  #carousel div.next{
+    transform: translateX(0) !important;
+    width: 100px;
+  }
+  #carousel div.nextRightSecond{
+    transform: translateX(0%) !important;
+    width: 50px;
+  }
+  #carousel div.prevLeftSecond{
+    transform: translateX(-150%) !important;
+    width: 50px;
+  }
+  #carousel{
+    height: 300px !important;
+  }
+}
+
+@media only screen and (max-width: 350px){
+  #carousel a {position:relative;
+    top:5px;
+  }}

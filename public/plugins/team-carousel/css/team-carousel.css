@@ -1,0 +1,90 @@
+.team-container{
+   
+    padding-top: 20px;
+}
+.team-carousel{
+    position: relative;
+}
+.team-carousel .items.back-pos{
+    opacity: 0;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+.team-carousel .items.main-pos{
+    margin:auto;
+    left: 3%;
+    right: 3%;
+    z-index: 2;
+    top: 0px;
+}
+.team-carousel .items.left-pos{
+    z-index: 1;
+    opacity: .3;
+    top: 0;
+    left: -50%;
+    right: 0;
+    margin: auto;
+    -webkit-transform: scale(.75);
+    -moz-transform: scale(.75);
+    transform: scale(.75);
+}
+.team-carousel .items h4{
+    font-size: 14px;
+}
+.team-carousel .items h3{
+    font-size: 18px;
+}
+.team-carousel .items.right-pos{
+    z-index: 1;
+    opacity: .3;
+    top: 0;
+    left: 50%;
+    right: 0;
+    margin: auto;
+    -webkit-transform: scale(.75);
+    -moz-transform: scale(.75);
+    transform: scale(.75);
+}
+.team-carousel .items{
+    position: absolute;
+    width: 20%;
+    text-align:center;
+    transition: all .3s ease-in-out;
+}
+.team-carousel .items img{
+    width: 100%;
+    border-radius:50%;
+}
+.team-container .next{
+    background: url(img/team_arrow.svg) no-repeat;
+    background-size: 20px;
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    height: 100%;
+    width: 20px;
+    z-index:10;
+}
+.team-container .prev{
+    background: url(img/team_arrow1.svg) no-repeat;
+    background-size: 20px;
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    height: 100%;
+    width: 20px;
+    z-index:10;
+}
+
+@media only screen  and (max-width:767px)
+{
+    .team-carousel .items{
+        width: 60% !important;
+    }
+}
+
+ul.team-carousel > li.items.left-pos > div.team-member-desc,
+ul.team-carousel > li.items.right-pos > div.team-member-desc {
+    opacity: 0.0;
+}

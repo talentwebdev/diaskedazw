@@ -1,0 +1,38 @@
+/* Cookie Dialog */
+:root {
+    --purple: #3B3646;
+    --red: #EE4B5A;
+}
+.cookie-accept-btn{
+    margin: 0 20px;
+    padding: 3px 10px;
+    text-decoration: none;
+    border: none;
+    background-color: #419e41;
+    border-radius: 3px;
+    font: bold 13px/17px arial, tahoma, sans-serif;
+    outline: none;
+    color: #FFFFFF !important;
+    cursor: pointer;
+}
+
+.cookie-policy-alert{
+    display: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    z-index: 2147483647;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #000000;
+    filter: alpha(opacity=85);
+    -webkit-opacity: 0.85;
+    -moz-opacity: 0.85;
+    opacity: 0.85;
+    font: normal 13px/17px arial, tahoma, sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

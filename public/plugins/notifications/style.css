@@ -1,0 +1,50 @@
+:root{
+    --notification-normal-text-size: 12px;
+    --notification-line-height: 14px;
+    --notification-title-text-size: 13px;
+}
+
+.notification-item{
+    padding: 10px !important;
+}
+
+.notification-item .notification-sender{
+    width: 20%; 
+    position: relative;
+}
+
+.notification-item .notification-sender .image-container{
+    position: relative;
+}
+
+.notification-item .notification-sender .image-container .sender-image{
+    width:60px; 
+    height: 60px; 
+    display: block; 
+    margin:auto; 
+    border-radius: 50%;
+}
+
+.notification-item .notification-sender .image-container .notification-type-icon{
+    color: rgb(255, 201, 14);
+     position: absolute; 
+     left: 50%; 
+     top: 50%; 
+     transform: rotate(45deg) translate(30px) rotate(-45deg) translateX(-50%) translateY(-50%);
+}
+
+.notification-item .notification-content-container{
+    width: 80%; 
+    font-size: var(--notification-normal-text-size); 
+    line-height: var(--notification-line-height);
+}
+
+.notification-item .notification-content-container .notification-title{
+    font-weight:weight; 
+    font-size: var(--notification-title-text-size); 
+    margin-bottom: 5px;
+}
+
+.notification-item .notification-content-container .content{
+    margin-top: 10px;
+}

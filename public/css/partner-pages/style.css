@@ -1,0 +1,7 @@
+@media only screen and (max-width: 767px){
+    .collapse.navbar-collapse.show
+    {
+        height: 100vh !important;
+        position: fixed;
+    }
+}
