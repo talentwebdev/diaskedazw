@@ -89,4 +89,21 @@ class LikeModel extends Model
 
         return $result;
     }
+
+    public static function isLike($user, $company)
+    {
+        $like = 0;
+
+        if($user && $company)
+        {
+            $likeCheck = LikeModel::where('user_id', $user->id)->where('content_id', $company->id)->get();
+            if($likeCheck->first()){
+                $like = (int)$likeCheck->first()->heart;
+            }else{
+                $like = 0;
+            }
+        }
+        
+        return $like;
+    }
 }

@@ -143,4 +143,16 @@ class ProductModel extends Model
 
         return $products;
     }
+
+    public static function getProductsFromUser($user)
+    {
+        $products = array();
+
+        if($user)
+        {
+            $products = ProductModel::where("user_id", "=", $user->id)->get();       
+        }
+
+        return $products;
+    }
 }

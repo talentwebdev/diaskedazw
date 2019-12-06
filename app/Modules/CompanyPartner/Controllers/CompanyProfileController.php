@@ -30,27 +30,14 @@ class CompanyProfileController extends Controller
         $company->area = $company->area ? $company->area->name : "";
         $user = User::find($company->user_id);
 
-        $has_product = 0;
-        if($user){
-            $products = ProductModel::where("user_id", "=", $user->id)->get();        
-            if(count($products) > 0){
-                $has_product = 1;
-            }
-        }       
+        $products = ProductModel::getProductsFromUser($user);   
 
-        $likeCheck = LikeModel::where('user_id', $user->id)->where('content_id', $company->id)->get();
-        if($likeCheck->first()){
-            $like = (int)$likeCheck->first()->heart;
-        }else{
-            $like = 0;
-        }
-        
         return view("company.profile.index")
                 ->with("company", $company)
                 ->with("partner", $user)
-                ->with('has_product', $has_product)
+                ->with('has_product', count($products) > 0 ? 1 : 0)
                 ->with('products', $products)
-                ->with('like', $like);
+                ->with('like', LikeModel::isLike($user, $company));
     }
 
     public function productservice()
@@ -87,7 +74,8 @@ class CompanyProfileController extends Controller
 
         return view('company.profile.partials._company_video')
                 ->with('videos', VideoSupport::getVideosFromPartner($partnerid, $count))
-                ->with('partner', $user);
+                ->with('partner', $user)
+                ->with('company', $company);
     }
 
     public function imagepartial()
@@ -106,29 +94,41 @@ class CompanyProfileController extends Controller
     {
         $company = CompanyModel::find(request()->session()->get("company"));
         $user = User::find($company->user_id);
+        $products = ProductModel::getProductsFromUser($user);
 
         return view("company.profile.article")
                 ->with("company", CompanyModel::find(request()->session()->get("company")))
-                ->with("partner", $user);
+                ->with("partner", $user)
+                ->with('has_product', count($products) > 0 ? 1 : 0)
+                ->with('products', $products)
+                ->with('like', LikeModel::isLike($user, $company));
     }
 
     public function video()
     {
         $company = CompanyModel::find(request()->session()->get("company"));
         $user = User::find($company->user_id);
+        $products = ProductModel::getProductsFromUser($user);
 
         return view("company.profile.video")
                 ->with("company", CompanyModel::find(request()->session()->get("company")))
-                ->with("partner", $user);
+                ->with("partner", $user)                
+                ->with('has_product', count($products) > 0 ? 1 : 0)
+                ->with('products', $products)
+                ->with('like', LikeModel::isLike($user, $company));
     }
 
     public function image()
     {
         $company = CompanyModel::find(request()->session()->get("company"));
         $user = User::find($company->user_id);
+        $products = ProductModel::getProductsFromUser($user);
 
         return view("company.profile.image")
                 ->with("company", CompanyModel::find(request()->session()->get("company")))
-                ->with("partner", $user);
+                ->with("partner", $user)
+                ->with('has_product', count($products) > 0 ? 1 : 0)
+                ->with('products', $products)
+                ->with('like', LikeModel::isLike($user, $company));
     }
 }
