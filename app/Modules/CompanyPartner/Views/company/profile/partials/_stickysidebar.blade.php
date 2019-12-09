@@ -2,6 +2,30 @@
 <div class='sticky-sidebar-container'>
     <div class='sticky-sidebar' style='width: 100%;'>
         <div class='menu'>
+
+            <div class="owl-carousel owl-theme" id="carousel_ads_id">
+                @foreach($companyads as $ads)
+                <div class="item container">
+                    <div class="row">
+                        <img src="{{ asset($ads->adsimage_url) }}" alt="" style="width: 100%;">
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="{{ asset($ads->logoimage_url) }}" alt="" style="width: 100%;">
+                        </div>
+                        <div class="col-md-9">
+                            <h3 id="h3_headline_id">
+                                {{ $ads->headline }}
+                            </h3>
+                            <h5 id="h3_description_id">
+                                {{ $ads->description }}
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            
             <h4> Μενού </h4>
             <div id='home-menu'> <a href='{{ route("company.profile.index") }}'>Αρχική</a> </div>
             <div id='gallery-menu'> <a href='{{ route("company.profile.image") }}'>Όλες οι Εικόνες</a> </div>   
@@ -126,6 +150,20 @@
                 })
                 .fail(err => {});
     });
+
+// Company ads Carousel
+    $("#carousel_ads_id").ready(e => {
+    var owl = $('#carousel_ads_id');
+    owl.owlCarousel({
+        margin: 30,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        smartSpeed: 1000,
+        responsiveClass:true,
+        items: 1
+    });
+});
 </script>
 @endpush
 

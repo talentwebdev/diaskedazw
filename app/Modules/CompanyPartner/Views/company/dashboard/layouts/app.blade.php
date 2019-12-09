@@ -93,8 +93,9 @@
   }
   
 }
-@stack('page-styles')
 </style>
+
+
 
 
 <body class='m-page--fluid m--skin- m-content--skin-light2 m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--fixed m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default' style='padding-right: 0px !important;'>
@@ -137,7 +138,7 @@
 
                     <!-- Logo -->
                     <a class="nav-brand" href="{{ route('homepage') }}">
-                        <h5>Diask<img src="{{ asset('img/diask-img/ellinsds.png') }}" width="13" height="9" alt="ΕΛΛΗΝ"/>da<span>zw</span> </h5>
+                        <h5>Diask<img src="{{ asset('img/diask-img/ellinsds.png') }}" width="13" height="9" alt="ΕΛΛΗΝ" />da<span>zw</span> </h5>
                     </a>
 
                     <!-- Navbar Toggler -->
@@ -198,6 +199,11 @@
                                     <li>
                                         <a class='nav-link waves-effect waves-light' href="{{ route('company.dashboard.companyedit') }}">
                                             <i class="fas fa-pencil-alt"></i> Επεξεργασία Επιχείρησης 
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class='nav-link waves-effect waves-light' href="{{ route('company.dashboard.companyads') }}">
+                                            <i class="fas fa-ad"></i> Company Advertise
                                         </a>
                                     </li>
                                     <li>
@@ -372,5 +378,8 @@
     @endif
     @stack('scripts')
 </body>
-
 </html>
+
+<style>  
+  @stack('page-styles')
+</style>

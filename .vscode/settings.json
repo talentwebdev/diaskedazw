@@ -1,0 +1,5 @@
+{
+    "scm.defaultViewMode": "tree",
+    "css.lint.compatibleVendorPrefixes": "warning",
+    "search.useIgnoreFiles": false
+}

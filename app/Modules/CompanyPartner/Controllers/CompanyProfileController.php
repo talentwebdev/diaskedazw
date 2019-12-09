@@ -18,6 +18,7 @@ use App\Support\VideoSupport;
 use App\Support\ImageSupport;
 use App\Support\ArticleSupport;
 use App\Http\Controllers\Controller;
+use App\Modules\CompanyPartner\Models\CompanyAdsModel;
 
 class CompanyProfileController extends Controller
 {
@@ -37,7 +38,8 @@ class CompanyProfileController extends Controller
                 ->with("partner", $user)
                 ->with('has_product', count($products) > 0 ? 1 : 0)
                 ->with('products', $products)
-                ->with('like', LikeModel::isLike($user, $company));
+                ->with('like', LikeModel::isLike($user, $company))
+                ->with('companyads', CompanyAdsModel::getCompanyAdsFromUser($user));
     }
 
     public function productservice()
@@ -101,7 +103,8 @@ class CompanyProfileController extends Controller
                 ->with("partner", $user)
                 ->with('has_product', count($products) > 0 ? 1 : 0)
                 ->with('products', $products)
-                ->with('like', LikeModel::isLike($user, $company));
+                ->with('like', LikeModel::isLike($user, $company))                
+                ->with('companyads', CompanyAdsModel::getCompanyAdsFromUser($user));
     }
 
     public function video()
@@ -115,7 +118,8 @@ class CompanyProfileController extends Controller
                 ->with("partner", $user)                
                 ->with('has_product', count($products) > 0 ? 1 : 0)
                 ->with('products', $products)
-                ->with('like', LikeModel::isLike($user, $company));
+                ->with('like', LikeModel::isLike($user, $company))                
+                ->with('companyads', CompanyAdsModel::getCompanyAdsFromUser($user));
     }
 
     public function image()
@@ -129,6 +133,7 @@ class CompanyProfileController extends Controller
                 ->with("partner", $user)
                 ->with('has_product', count($products) > 0 ? 1 : 0)
                 ->with('products', $products)
-                ->with('like', LikeModel::isLike($user, $company));
+                ->with('like', LikeModel::isLike($user, $company))                
+                ->with('companyads', CompanyAdsModel::getCompanyAdsFromUser($user));
     }
 }

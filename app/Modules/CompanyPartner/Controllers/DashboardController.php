@@ -8,6 +8,7 @@
  */
 
 namespace App\Modules\CompanyPartner\Controllers;
+use App\Modules\CompanyPartner\Models\CompanyAdsModel;
 use App\Modules\CompanyPartner\Models\InboxModel;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -60,5 +61,13 @@ class DashboardController extends Controller
             return redirect()->route('company.partner.create');
         return view('company.dashboard.companyedit')
                 ->with('company', $company);
+   }
+
+   public function companyads()
+   {
+        $companyads = CompanyAdsModel::getCompanyAdsFromUser(Auth::user());
+
+        return view('company.dashboard.companyads')
+                ->with('companyads', $companyads);
    }
 }

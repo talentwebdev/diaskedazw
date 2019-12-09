@@ -31,6 +31,12 @@ Route::group(['middleware' => ['web'], 'prefix'=>'company', 'namespace' => 'App\
         Route::get("/promote", ['uses' => "DashboardController@promote", 'as' => 'company.dashboard.promote']);
         Route::get('/inbox', ['uses' => 'DashboardController@inbox', 'as' => 'company.dashboard.inbox']);
         Route::get('/companyedit', ['uses' => 'DashboardController@companyedit', 'as' => 'company.dashboard.companyedit']);
+        Route::get('/companyads', ['uses' => 'DashboardController@companyads', 'as' => 'company.dashboard.companyads']);
+        
+        Route::group(['prefix' => 'companyads'], function(){
+
+            Route::post('/addads', ['uses' => 'DashboardCompanyAdsController@addads', 'as' => 'company.dashboard.companyads.addads']);
+        });
     });
 
     Route::group(['middleware' => ['company.select'], 'prefix' => 'profile'], function(){
