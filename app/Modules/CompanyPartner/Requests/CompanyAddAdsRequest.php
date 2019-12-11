@@ -42,10 +42,7 @@ class CompanyAddAdsRequest extends FormRequest
         return [
             //
             'link_url' => 'required',
-            'logoimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'adsimage' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'headline' => 'required',
-            'description' => 'required',
         ];
     }
 }

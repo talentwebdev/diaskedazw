@@ -27,16 +27,21 @@ class DashboardCompanyAdsController extends Controller
         $companyads->link_url       = request()->link_url;
 
         // move files
-        $imageName = Auth::user()->id . time() . '.' . request()->adsimage->getClientOriginalExtension();  
-        request()->adsimage->move('images/company_ads', $imageName);
-        $companyads->adsimage_url = "images/company_ads/" . $imageName;
-
-        $imageName = Auth::user()->id . time() . '.' . request()->logoimage->getClientOriginalExtension();  
-        request()->logoimage->move("images/company_ads_logo", $imageName);
-        $companyads->logoimage_url = "images/company_ads_logo/" . $imageName;
+        if(request()->adsimage)
+        {
+            $imageName = Auth::user()->id . time() . '.' . request()->adsimage->getClientOriginalExtension();  
+            request()->adsimage->move('images/company_ads', $imageName);
+            $companyads->adsimage_url = "images/company_ads/" . $imageName;
+        }
+      
+        if(request()->logoimage)
+        {
+            $imageName = Auth::user()->id . time() . '.' . request()->logoimage->getClientOriginalExtension();  
+            request()->logoimage->move("images/company_ads_logo", $imageName);
+            $companyads->logoimage_url = "images/company_ads_logo/" . $imageName;
+        }  
 
         $companyads->timestamps = false;
-
         $companyads->save();
 
         //return redirect()->route('company.dashboard.companyads');

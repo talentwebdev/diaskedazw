@@ -157,7 +157,7 @@
 .sticky-sidebar{
     padding:10px;
 }
-.menu div{
+.menu div.menu-content{
     border-left: 4px solid #AAA;
     border-bottom: 1px solid #AAA;
     padding: 5px;

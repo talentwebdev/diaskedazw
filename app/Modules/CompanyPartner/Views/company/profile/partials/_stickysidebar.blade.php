@@ -27,10 +27,10 @@
             </div>
             
             <h4> Μενού </h4>
-            <div id='home-menu'> <a href='{{ route("company.profile.index") }}'>Αρχική</a> </div>
-            <div id='gallery-menu'> <a href='{{ route("company.profile.image") }}'>Όλες οι Εικόνες</a> </div>   
-            <div id='video-menu'> <a href='{{ route("company.profile.video") }}'>Όλα τα Videos</a> </div>
-            <div id='article-menu'> <a href='{{ route("company.profile.article") }}'>Όλα τα Άρθρα</a> </div>
+            <div id='home-menu' class="menu-content"> <a href='{{ route("company.profile.index") }}'>Αρχική</a> </div>
+            <div id='gallery-menu' class="menu-content"> <a href='{{ route("company.profile.image") }}'>Όλες οι Εικόνες</a> </div>   
+            <div id='video-menu' class="menu-content"> <a href='{{ route("company.profile.video") }}'>Όλα τα Videos</a> </div>
+            <div id='article-menu' class="menu-content"> <a href='{{ route("company.profile.article") }}'>Όλα τα Άρθρα</a> </div>
                  
             <div id='gallery-menu'> <a href='' user-id="{{ $partner->id }}" id='eshop-link'>E-shop</a> </div>        
             <div id='website-menu'> <a href='{{ $company->link_url }}'>Ιστοσελίδα</a> </div>        
