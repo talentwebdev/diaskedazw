@@ -93,7 +93,7 @@
                 });   
             
             // fetch message from database.
-            $.get( 'fetchmessages', {channel: parent.channel})
+            $.get( '/fetchmessages', {channel: parent.channel})
                 .done((data) => {
                     console.log( 'fetchmessages success', data );
 
@@ -258,7 +258,7 @@
     ChatComponent.prototype.sendMessage = function(payment)
     {
         var parent = this;
-        $.post( 'sendmessage', {
+        $.post( '/sendmessage', {
             _token: csrf_token,
             channel: this.channel,
             message: this.el.find('.chat-input').val(),

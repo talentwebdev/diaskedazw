@@ -12,11 +12,11 @@
                     <div class='col-md-8' style='text-align:center;'>
                         <div style='color:#FFF; font-weight:bold; font-size:16px;'>&nbsp;
                                <i product-id='{{ $value->id }}' class='fas fa-star {{ $value->isLike ? "active" : "" }}'></i> &nbsp;
-                            <span style='color:#F6FAFF;'>{{ $value->title }} - &nbsp;</span>                            
+                            <span style='color:#F6FAFF;'>{{ $value->title }}  &nbsp;</span>                            
                             
                         </div>
                         <div>
-                            <span style='color:#FFF;'> {{ $value->description }} </span>
+                            <span style='color:#FFF; position:relative; left:10px;'> {{ $value->description }} </span>
                         </div>
                         <div>
                             

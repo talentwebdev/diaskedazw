@@ -169,12 +169,12 @@
 .menu div a{
     color: #444;
 }
-.menu div.active{
+.menu div.menu-content.active{
     border-left: 4px solid rgb(66, 133, 244);
     border-bottom: 1px solid rgb(66, 133, 244);
     color: rgb(66, 133, 244);
 }
-.menu div.active a{
+.menu div.menu-content.active a{
     color: rgb(66, 133, 244);
 }
 .menu h4{

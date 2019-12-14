@@ -53,6 +53,28 @@
     </div>
 </div>
 
+<!-- ***** Site Area Start ***** -->
+<section class="uza-portfolio-area">
+    <!-- Other sites introducing -->
+    @include('user.partnerprofile.component.sitecarousel')
+    <!-- Other sites introducing End -->
+</section>
+<!-- ***** Site Area End ***** -->
+<!-- ***** Chat ***** -->
+@auth
+<script>
+    var partner = {
+        "id": "{{ $partner->id }}",
+        "img_url": "{{ $partner->img_url }}",
+        "name": "{{ $partner->name }}",
+        "email": "{{ $partner->email }}"
+    };
+</script>
+@include('other.chat')
+@include('other.activatechatdlg')
+@endauth
+<!-- ***** Chat End ***** -->
+
 @include('other.footer')
 @endsection
 

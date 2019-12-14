@@ -46,7 +46,7 @@
     $("#modalactivechat #button-ok").click( function(){
         if(chat_component != undefined)
         {
-            $.post('paychat', {
+            $.post('{{route("paychat")}}', {
                 _token: csrf_token,
                 partner_id: chat_component.partner.id,
                 channel: chat_component.settings.channel

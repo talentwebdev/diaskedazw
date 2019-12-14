@@ -24,6 +24,14 @@
     </div>
 </section>
 
+<!-- ***** Site Area Start ***** -->
+<section class="uza-portfolio-area">
+    <!-- Other sites introducing -->
+    @include('user.partnerprofile.component.sitecarousel')
+    <!-- Other sites introducing End -->
+</section>
+<!-- ***** Site Area End ***** -->
+
 @include('other.footer')
 @endsection
 

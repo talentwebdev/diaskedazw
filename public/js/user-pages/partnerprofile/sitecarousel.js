@@ -95,7 +95,7 @@
         });*/        
         
     }
-    $.get('fetchcompanies')
+    $.get('/fetchcompanies')
         .done((data)=>{
             console.log('fetchcompanies successed', data);
             companies = data;

@@ -37,6 +37,7 @@
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.0/mapbox-gl-geocoder.css' type='text/css' />
     <link rel='stylesheet' href="{{ asset('plugins/mapbox/my-own-mapbox.css') }}" type="text/css" />
+    <link href='{{ asset("css/chat-component/chat-component.css") }}' rel='stylesheet'>
 
     @stack('external-styles')
 </head>
@@ -304,11 +305,13 @@
   @yield('content')
 </section>
 
+
 @include('other.activatealertdlg')
 @include('other.activatedlg')
     <!-- ****** Gallery Area End ****** -->
 
 </div>
+@include('partner.chat.chat')
     <!-- ***** Footer Area End ***** -->
     <!-- ******* All JS Files ******* -->
     <!-- jQuery js -->    
