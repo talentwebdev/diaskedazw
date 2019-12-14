@@ -30,10 +30,9 @@
             <div id='home-menu' class="menu-content"> <a href='{{ route("company.profile.index") }}'>Αρχική</a> </div>
             <div id='gallery-menu' class="menu-content"> <a href='{{ route("company.profile.image") }}'>Όλες οι Εικόνες</a> </div>   
             <div id='video-menu' class="menu-content"> <a href='{{ route("company.profile.video") }}'>Όλα τα Videos</a> </div>
-            <div id='article-menu' class="menu-content"> <a href='{{ route("company.profile.article") }}'>Όλα τα Άρθρα</a> </div>
-                 
-            <div id='gallery-menu'> <a href='' user-id="{{ $partner->id }}" id='eshop-link'>E-shop</a> </div>        
-            <div id='website-menu'> <a href='{{ $company->link_url }}'>Ιστοσελίδα</a> </div>        
+            <div id='article-menu' class="menu-content"> <a href='{{ route("company.profile.article") }}'>Όλα τα Άρθρα</a> </div>                 
+            <div id='gallery-menu' class="menu-content"> <a href='' user-id="{{ $partner->id }}" id='eshop-link'>E-shop</a> </div>        
+            <div id='website-menu' class="menu-content"> <a href='{{ $company->link_url }}'>Ιστοσελίδα</a> </div>        
 
    
             <!-- <form id="myform" role="form"  method="get" action="{{URL::to('product')}}">
@@ -60,7 +59,9 @@
 
         <div>
                 <section class='uza-services-area' style='padding: 20px 30px 20px 30px ; background-color:rgba(0, 0, 0, 0.7); position:relative; margin-top:40px;'>
+                    <!--
                     <div class="advertise-title" style="top: 0; transform: translateY(-100%); opacity: 0.7; border-radius: 20px 20px 0px 0px; background:black; left: 10%; z-index:1;  width: auto; padding-left: 30px; padding-right: 30px;">Product - Service</div>
+                    -->
                     <div class='row '>
                                                     
                             @foreach($products as $product)
