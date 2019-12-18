@@ -49,7 +49,7 @@
             //                 });
             // });
             // new DropDown( $('#categoryDropdown') );
-
+            console.log("categories", categories);
             categories.forEach((category)=>{                
                 var html_ ='<option value=' + category.id + '>' + category.name + '</option>'
                 $("#company_category").append(html_);

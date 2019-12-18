@@ -101,7 +101,7 @@
                     </div> -->
 
                     <div class="col-md-12">
-                        <h5> Area: </h5>
+                        <h5> Category: </h5>
      
                         <div class="wrapper-dropdown-3" style="border:none !important;">
                             <select class="js-example-basic-single2" style="width:100%; " id="company_category" name="company_category[]" multiple="multiple">

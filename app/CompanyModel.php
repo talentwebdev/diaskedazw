@@ -25,19 +25,10 @@ class CompanyModel extends Model
         return $this->hasOne('App\User', 'user_id', 'id');
     }
 
-    public function category()
-    {
-        return $this->belongsTo('App\CategoryModel', 'category_id', 'id');
-    }
-
-    public function area()
-    {
-        return $this->belongsTo('App\AreaModel', 'area_id', 'id');
-    }
-
     /* static */
     public static function isValidId($id)
     {
         return self::find($id) != null;
     }
+
 }

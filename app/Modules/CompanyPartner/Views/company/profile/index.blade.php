@@ -18,7 +18,17 @@
         <div class='main-area-content'>
             <div class='article-image-section'>
                 <ul class="nav nav-tabs md-tabs" id="myTabMD" role="tablist" >
-                    <a style="margin-right: auto; margin-left: 10px;">Category: {{ $company->category }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Area: {{ $company->area }}</a>
+                    <a style="margin-right: auto; margin-left: 10px;">
+                        Category: 
+                            @foreach($company->categories as $category)
+                                {{ $category->name }}
+                            @endforeach
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Area: 
+                            @foreach($company->areas as $area)
+                                {{ $area->name }}
+                            @endforeach
+                    </a>
                     <li class="nav-item">
                         <a class="nav-link active" id="image-tab-md" data-toggle="tab" href="#image-md" role="tab" aria-controls="image-md"
                         aria-selected="false"><i class="fas fa-images"></i> Εικόνες</a>

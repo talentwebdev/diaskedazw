@@ -18,7 +18,10 @@ use App\Support\VideoSupport;
 use App\Support\ImageSupport;
 use App\Support\ArticleSupport;
 use App\Http\Controllers\Controller;
+use App\AreaModel;
+use App\CategoryModel;
 use App\Modules\CompanyPartner\Models\CompanyAdsModel;
+
 
 class CompanyProfileController extends Controller
 {
@@ -27,8 +30,11 @@ class CompanyProfileController extends Controller
         if((int)request()->company_id > 0)
             request()->session()->put("company", request()->company_id);
         $company = CompanyModel::find(request()->session()->get("company"));
-        $company->category = $company->category ? $company->category->name : "";
-        $company->area = $company->area ? $company->area->name : "";
+        $name = $company->name;
+        //$company->category = $company->category ? $company->category->name : "";
+        //$company->area = $company->area ? $company->area->name : "";
+        $company->categories = CategoryModel::getCategoriesFromIDString($company->category_id);
+        $company->areas = AreaModel::getAreasFromIDString($company->area_id);
         $user = User::find($company->user_id);
 
         $products = ProductModel::getProductsFromUser($user);   

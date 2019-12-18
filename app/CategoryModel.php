@@ -18,8 +18,31 @@ class CategoryModel extends Model
 
     protected $table = "category";
 
-    public function companys()
+    /**
+     * @return Array of Categories
+     */
+    public static function getCategoriesFromIDString($IDsz)
     {
-        return $this->hasMany('App\CompanyModel', 'category_id', 'id');
+        $ids = explode(":", $IDsz);
+        $categories = array();
+        for($i = 1 ; $i < count($ids) ; $i++)
+        {
+            $category = self::find(intval($ids[$i]));
+            if($category)
+            {
+                //$category = $category->name;
+                array_push($categories, $category);
+            }            
+        }
+
+        if(count($ids) == 1)
+        {
+            
+            $category = self::find(intval($IDsz));
+            if($category)
+                array_push($categories, $category);
+        }
+
+        return $categories;
     }
 }

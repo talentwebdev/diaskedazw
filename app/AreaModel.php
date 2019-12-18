@@ -18,8 +18,30 @@ class AreaModel extends Model
 
     protected $table = "area";
     
-    public function companys()
+    /**
+     * @return Array of Categories
+     */
+    public static function getAreasFromIDString($IDsz)
     {
-        return $this->hasMany('App\CompanyModel', 'area_id', 'id');
+        $ids = explode(":", $IDsz);
+        $areas = array();
+        for($i = 1 ; $i < count($ids) ; $i++)
+        {
+            $area = self::find(intval($ids[$i]));
+            if($area)
+            {
+                //$category = $category->name;
+                array_push($areas, $area);
+            }            
+        }
+
+        if(count($ids) == 1)
+        {
+            $area = self::find(intval($IDsz));
+            if($area)
+                array_push($areas, $area);
+        }
+
+        return $areas;
     }
 }
