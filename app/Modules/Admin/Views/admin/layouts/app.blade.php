@@ -165,6 +165,22 @@ body{
                                     
                                     </ul>
                                 </li>
+                                <li>
+                                    <a>
+                                        <i class="fas fa-bell" style='font-size: 12px; color: rgb(255, 201, 14);'></i> Favorite Company
+                                    </a>
+                                    <ul class="dropdown" style='width: 400px;' id="favorite-company">                                      
+                                    
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a>
+                                        <i class="fas fa-bell" style='font-size: 12px; color: rgb(255, 201, 14);'></i> Favorite Discount
+                                    </a>
+                                    <ul class="dropdown" style='width: 400px;' id="favorite-discount">                                      
+                                    
+                                    </ul>
+                                </li>
                                 @endauth
                                 <li>
                                   <a href='#'>Μενού</a>

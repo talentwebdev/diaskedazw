@@ -21,6 +21,7 @@ use App\Http\Controllers\Controller;
 use App\AreaModel;
 use App\CategoryModel;
 use App\Modules\CompanyPartner\Models\CompanyAdsModel;
+use Illuminate\Support\Facades\Auth;
 
 
 class CompanyProfileController extends Controller
@@ -35,7 +36,8 @@ class CompanyProfileController extends Controller
         //$company->area = $company->area ? $company->area->name : "";
         $company->categories = CategoryModel::getCategoriesFromIDString($company->category_id);
         $company->areas = AreaModel::getAreasFromIDString($company->area_id);
-        $user = User::find($company->user_id);
+        $company->likecount = LikeModel::getLikeCount($company->id, "company");
+        $user = Auth::user();
 
         $products = ProductModel::getProductsFromUser($user);   
 
@@ -44,7 +46,7 @@ class CompanyProfileController extends Controller
                 ->with("partner", $user)
                 ->with('has_product', count($products) > 0 ? 1 : 0)
                 ->with('products', $products)
-                ->with('like', LikeModel::isLike($user, $company))
+                ->with('like', LikeModel::isLike($user, $company, "company"))
                 ->with('companyads', CompanyAdsModel::getCompanyAdsFromUser($user));
     }
 
@@ -54,9 +56,8 @@ class CompanyProfileController extends Controller
         $company = CompanyModel::find(request()->session()->get("company"));
         //$products = ProductModel::getLatestProducts(5, $partnerid);
         $discounts = DiscountModel::getLatestDiscounts(5, $company->id);
-        $user = User::find($company->user_id);
 
-        return view("company.profile.partials._index_productservice")
+        return view("company.profile.partials._index_discountservice")
                 // ->with('products', $products)
                 ->with('discounts', $discounts);
     }
@@ -78,12 +79,12 @@ class CompanyProfileController extends Controller
         $partnerid = request()->partner_id;
         $count = request()->count;
         $company = CompanyModel::find(request()->session()->get("company"));
+        $company->likecount = LikeModel::getLikeCount($company->id, "company");
         $user = User::find($company->user_id);
 
         return view('company.profile.partials._company_video')
                 ->with('videos', VideoSupport::getVideosFromPartner($partnerid, $count))
-                ->with('partner', $user)
-                ->with('company', $company);
+                ->with('partner', $user);
     }
 
     public function imagepartial()
@@ -103,13 +104,14 @@ class CompanyProfileController extends Controller
         $company = CompanyModel::find(request()->session()->get("company"));
         $user = User::find($company->user_id);
         $products = ProductModel::getProductsFromUser($user);
+        $company->likecount = LikeModel::getLikeCount($company->id, "company");
 
         return view("company.profile.article")
-                ->with("company", CompanyModel::find(request()->session()->get("company")))
+                ->with("company", $company)
                 ->with("partner", $user)
                 ->with('has_product', count($products) > 0 ? 1 : 0)
                 ->with('products', $products)
-                ->with('like', LikeModel::isLike($user, $company))                
+                ->with('like', LikeModel::isLike(Auth::user(), $company, "company"))                
                 ->with('companyads', CompanyAdsModel::getCompanyAdsFromUser($user));
     }
 
@@ -118,13 +120,14 @@ class CompanyProfileController extends Controller
         $company = CompanyModel::find(request()->session()->get("company"));
         $user = User::find($company->user_id);
         $products = ProductModel::getProductsFromUser($user);
+        $company->likecount = LikeModel::getLikeCount($company->id, "company");
 
         return view("company.profile.video")
-                ->with("company", CompanyModel::find(request()->session()->get("company")))
+                ->with("company", $company)
                 ->with("partner", $user)                
                 ->with('has_product', count($products) > 0 ? 1 : 0)
                 ->with('products', $products)
-                ->with('like', LikeModel::isLike($user, $company))                
+                ->with('like', LikeModel::isLike(Auth::user(), $company, "company"))                
                 ->with('companyads', CompanyAdsModel::getCompanyAdsFromUser($user));
     }
 
@@ -133,13 +136,14 @@ class CompanyProfileController extends Controller
         $company = CompanyModel::find(request()->session()->get("company"));
         $user = User::find($company->user_id);
         $products = ProductModel::getProductsFromUser($user);
+        $company->likecount = LikeModel::getLikeCount($company->id, "company");
 
         return view("company.profile.image")
-                ->with("company", CompanyModel::find(request()->session()->get("company")))
+                ->with("company", $company)
                 ->with("partner", $user)
                 ->with('has_product', count($products) > 0 ? 1 : 0)
                 ->with('products', $products)
-                ->with('like', LikeModel::isLike($user, $company))                
+                ->with('like', LikeModel::isLike(Auth::user(), $company, "company"))                
                 ->with('companyads', CompanyAdsModel::getCompanyAdsFromUser($user));
     }
 }

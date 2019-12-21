@@ -1,0 +1,58 @@
+:root{
+    --notification-normal-text-size: 12px;
+    --notification-line-height: 14px;
+    --notification-title-text-size: 13px;
+}
+
+.favorite-company-item{
+    padding: 10px !important;
+}
+
+.favorite-company-item .company-logo{
+    width: 20%; 
+    position: relative;
+}
+
+.favorite-company-item .company-logo .image-container{
+    position: relative;
+}
+
+.favorite-company-item .company-logo .image-container .logo-image{
+    width:60px; 
+    height: 60px; 
+    display: block; 
+    margin:auto; 
+    border-radius: 50%;
+}
+
+.favorite-company-item .company-content-container{
+    width: 80%; 
+    font-size: var(--notification-normal-text-size); 
+    line-height: var(--notification-line-height);
+}
+
+.favorite-company-item .company-content-container .company-title{
+    font-weight:weight; 
+    font-size: var(--notification-title-text-size); 
+    margin-bottom: 5px;
+}   
+
+.favorite-discount-item{
+    padding: 10px !important;
+}
+
+.favorite-discount-item .discount-content-container{
+    padding: 10px;
+    font-size: var(--notification-normal-text-size); 
+    line-height: var(--notification-line-height);
+}
+
+.favorite-discount-item .discount-content-container .discount-title{
+    font-weight:weight; 
+    font-size: var(--notification-title-text-size); 
+    margin-bottom: 5px;
+}   
+
+.favorite-discount-item .discount-content-container .content{
+    margin-top: 10px;
+}

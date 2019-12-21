@@ -36,6 +36,7 @@
 
     <!-- Notifications part -->
     <link rel="stylesheet" href="{{ asset('plugins/notifications/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('plugins/favorite/style.css') }}" />
 
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.0/mapbox-gl-geocoder.css' type='text/css' />
@@ -169,6 +170,22 @@
                                         <i class="fas fa-bell" style='font-size: 12px; color: rgb(255, 201, 14);'></i> Ειδοποιήσεις
                                     </a>
                                     <ul class="dropdown" style='width: 400px;' id="notifications">                                      
+                                    
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a>
+                                        <i class="fas fa-bell" style='font-size: 12px; color: rgb(255, 201, 14);'></i> Favorite Company
+                                    </a>
+                                    <ul class="dropdown" style='width: 400px;' id="favorite-company">                                      
+                                    
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a>
+                                        <i class="fas fa-bell" style='font-size: 12px; color: rgb(255, 201, 14);'></i> Favorite Discount
+                                    </a>
+                                    <ul class="dropdown" style='width: 400px;' id="favorite-discount">                                      
                                     
                                     </ul>
                                 </li>
@@ -317,6 +334,10 @@
 
     <script src="{{ asset('plugins/notifications/index.js') }}"></script>
     <script src="{{ asset('js/default-assets/notifications.js') }}"></script>
+
+    @auth
+        @include('__js_fetch_favorites')
+    @endauth
 
     <script src="{{ asset( 'js/default-assets/uza_window_init.js') }}"></script>
     <script src="{{ asset('js/jquery.transform2d.js') }}"></script>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use \App\CompanyModel;
 use \App\AreaModel;
 use \App\CategoryModel;
@@ -72,6 +73,23 @@ class CompanyController extends Controller
         return $result;
     }
 
+    public function fetchFavoriteCompanies()
+    {
+        $likes = LikeModel::where('content_type', '=', 'company')
+                            ->where('heart', '=', 1)
+                            ->where('user_id', '=', Auth::user()->id)
+                            ->get();
+
+        $companies = array();
+        foreach($likes as $like)
+        {
+            $company = CompanyModel::find($like->content_id);
+            if($company)
+                array_push($companies, $company);
+        }   
+        return $companies;
+    }
+
 
     
     public static function likeCompany()
@@ -80,24 +98,36 @@ class CompanyController extends Controller
         $partner_id = request()->partner_id;
         $like = request()->like;
 
+        if(!Auth::user())
+        {
+            return json_encode(array("response" => 0));
+        }
+
 
         $company = CompanyModel::where('id', '=', $company_id)
                             ->get();
         if($company->first()){           
 
-                $check = LikeModel::where('user_id', $partner_id)->where('content_id', $company_id)->get();
-                if($check->first()){
-                    DB::table('like')->update(['heart' => $like]);
-                    return json_encode(array("response" => 200, 'like' => (int)$like ));
-                }else{
-                    LikeModel::addStatus($partner_id, $company_id, "company", "heart");
-                    return json_encode(array("response" => 200 , 'like'=> (int)$like ));
-                }                            
+            $check = LikeModel::where('user_id', Auth::user()->id)
+                    ->where('content_type', '=', 'company')
+                    ->where('content_id', $company_id)->get();
+            if(count($check) > 0) $likemodel = $check[0];
+            else $likemodel = new LikeModel;
+
+            $likemodel->content_type = "company";
+            $likemodel->content_id = $company_id;
+            $likemodel->heart = $like;
+            $likemodel->user_id = Auth::user()->id;
+            $likemodel->timestamps = false;
+            $likemodel->save();
+
+            return json_encode(array("response" => 200, 'like' => (int)$like, 'likecount' => (int)LikeModel::getLikeCount($company_id, "company") ));                         
                    
         }
         return json_encode(array("response" => 0 ));
 
     }
+
 
     
 }

@@ -37,6 +37,8 @@ Route::get('/searcharticle', "ArticleController@searchArticle")->name('searchart
 // fetch notifications
 Route::get("/fetchnotifications", ['uses' =>"NotificationController@fetchNotifications", 'as' => 'fetchnotifications'])->name("fetchnotifications");
 //Route::get('/fetchnotifications', "NotificationController@fetchNotifications")->name('fetchnotifications');
+Route::get("/fetchfavoritecompanies", 'CompanyController@fetchFavoriteCompanies')->name('fetchfavoritecompanies');
+Route::get("/fetchfavoritediscounts", 'DiscountController@fetchFavoriteDiscounts')->name('fetchfavoritediscounts');
 
 Route::get("/fetchaddpointsnotifications", ['uses' =>"NotificationController@fetchAddpointsNotifications", 'as' => 'fetchaddpointsnotifications'])->name("fetchaddpointsnotifications");
 
@@ -161,6 +163,7 @@ Route::get("/fetchuserpromoteproducts", "ProductController@fetchUserPromoteProdu
 Route::get("/favoriteproducts", "ProductController@favoriteProducts")->name("favoriteproducts");
 Route::post("/buyproduct", "ProductController@buyProduct")->name("buyproduct");
 Route::post("/likeproduct", "ProductController@likeProduct")->name("likeproduct");
+Route::post("/likediscount", "DiscountController@likeDiscount")->name("likediscount");
 
 Route::post("/subscribe", "ProductController@subscribeForSeller")->name("subscribe");
 Route::get("/fetchtransaction", "TransactionController@fetchTransaction")->name("fetchtransaction");

@@ -6,9 +6,9 @@
             $titleHTML = '' . 
                 '<div style="width: 100%;"><a>' . $video->title . '</a>' .
                     '<span class="title-like" video-id="'.$video->id.'" style="float:right;">' .
-                        '<a style="padding: 5px;"><i video-id="'.$video->id.'" class="fas fa-star ' . ($video->is_star ? "active" : "" ) . '"></i> <span class="count">' . $video->star . '<span></a>' .
-                        '<a style="padding: 5px;"><i video-id="'.$video->id.'" class="fas fa-sign-language ' . ($video->is_clap ? "active" : "" ) . '"></i> <span class="count">' . $video->clap . '<span></a>' . 
-                        '<a style="padding: 5px;"><i video-id="'.$video->id.'" class="fas fa-heart ' . ($video->is_heart ? "active" : "" ) . '"></i> <span class="count">' . $video->heart . "<span></a>" .
+                        '<a style="padding: 5px;"><i video-id="'.$video->id.'" class="fas fa-star like-video ' . ($video->is_star ? "active" : "" ) . '"></i> <span class="count">' . $video->star . '<span></a>' .
+                        '<a style="padding: 5px;"><i video-id="'.$video->id.'" class="fas fa-sign-language like-video ' . ($video->is_clap ? "active" : "" ) . '"></i> <span class="count">' . $video->clap . '<span></a>' . 
+                        '<a style="padding: 5px;"><i video-id="'.$video->id.'" class="fas fa-heart like-video ' . ($video->is_heart ? "active" : "" ) . '"></i> <span class="count">' . $video->heart . "<span></a>" .
                     '</span>' .
                 '</div>';
         @endphp
@@ -25,7 +25,7 @@
                     <p class='video-caption-description'>{{ $video->description }}</p>
                     <div style=''>
                         <div class='like-button-container' video-id='{{ $video->id }}' style='margin:auto;'>
-                            <a style='padding: 5px;'><i video-id='{{ $video->id }}' class='fas fa-star {{ $video->is_star ? "active" : "" }}'></i> <span class='count'>{{ $video->star }}<span></a>
+                            <a style='padding: 5px;'><i video-id='{{ $video->id }}' class='fas fa-star like-video {{ $video->is_star ? "active" : "" }}'></i> <span class='count'>{{ $video->star }}<span></a>
                             <a style='padding: 5px;'><i video-id='{{ $video->id }}' class='fas fa-sign-language {{ $video->is_clap ? "active" : "" }}'></i> <span class='count'>{{ $video->clap }}<span></a>
                             <a style='padding: 5px;'><i video-id='{{ $video->id }}' class='fas fa-heart {{ $video->is_heart ? "active" : "" }}'></i> <span class='count'>{{ $video->heart }}<span></a>
                         </div>
@@ -119,17 +119,20 @@
                                 return;
                             }else if(data.response == 200){                                
                                 if(data.like == 1){     
-                                    $("i.fa-heart[company-id='"+$(e.target).attr("company-id")+"']").addClass("active");
+                                    $("i.fa-heart[company-id='"+$(e.target).attr("company-id")+"']").addClass("active");                                    
                                 }else{
 
                                     $("i.fa-heart[company-id='"+$(e.target).attr("company-id")+"']").removeClass("active");
                                 }
                                 
+                                $("span.company-like.count").text(parseInt($("span.company-like.count").text()) + (data.like == 1 ? (1) : (-1)));
                             }
 
                         })
                         .fail(function(err){});
-                }else{
+                }
+                else if($(e.target).hasClass('like-video'))
+                {
                     el = $(e.target);
                     // send request
                     $.get("{{ route('likevideo') }}", {video_id: $(e.target).attr("video-id"), liketype: type, partner_id: {{ $partner->id }}})

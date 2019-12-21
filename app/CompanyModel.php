@@ -30,5 +30,4 @@ class CompanyModel extends Model
     {
         return self::find($id) != null;
     }
-
 }

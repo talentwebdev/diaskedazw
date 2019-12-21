@@ -11,7 +11,7 @@
                 <div style='width:calc(100% - 130px);'>
                     <div style="display: flex;">
                         <div class='partner-info-description' style='word-wrap:break-word;'><h5 style='font-weight: bold;'>{{ $company->name }}</h5></div>
-                        <a style='padding: 5px; margin-left:8px;margin-top:-5px;' ><i company-id='{{ $company->id }}' class='article fas fa-heart fa-company {{$like ? "active" : "" }}'></i> <span class='count'>{{$company->heart }}</a>
+                        <a style='padding: 5px; margin-left:8px;margin-top:-5px;' ><i company-id='{{ $company->id }}' class='article fas fa-heart fa-company {{$like ? "active" : "" }}'></i> <span class='company-like count'>{{ $company->likecount['heart'] }}</a>
                         
                     </div>
                     
