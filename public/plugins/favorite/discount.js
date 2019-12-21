@@ -36,6 +36,11 @@
                 "<li>" +
                     "<a>" +
                         "<div class='row favorite-discount-item'>" + 
+                            "<div class='company-logo'> " + 
+                                "<div class='image-container'> " +
+                                    (discount.company_logo != null ? ("<img class='logo-image' src='" + asset_url + "/" + discount.company_logo + "'>") : "") +                            
+                                "</div>" + 
+                            "</div>" +
                             "<div class='discount-content-container'>" +
                                 "<div class='discount-title'>" + discount.title + "</div>"
                                 "<div class='discount-content'>" + discount.description + "</div>"

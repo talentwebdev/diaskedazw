@@ -56,3 +56,39 @@
 .favorite-discount-item .discount-content-container .content{
     margin-top: 10px;
 }
+
+.favorite-discount-item .company-logo{
+    width: 20%; 
+    position: relative;
+}
+
+.favorite-discount-item .company-logo .image-container{
+    position: relative;
+}
+
+.favorite-discount-item .company-logo .image-container .logo-image{
+    width:60px; 
+    height: 60px; 
+    display: block; 
+    margin:auto; 
+    border-radius: 50%;
+}
+
+
+
+@media only screen and (max-width: 991px){
+    .favorite-company-item .company-logo .image-container .logo-image{
+        width: 40px;
+        height: 40px;
+    }
+    .favorite-discount-item .company-logo .image-container .logo-image{
+        width: 40px;
+        height: 40px;
+    }
+    #favorite-company a{
+        display: inline !important;
+    }
+    #favorite-discount a{
+        display: inline !important;
+    }
+}

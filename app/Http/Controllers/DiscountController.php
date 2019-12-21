@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\DiscountModel;
 use App\LikeModel;
+use App\CompanyModel;
 
 class DiscountController extends Controller
 {
@@ -84,6 +85,11 @@ class DiscountController extends Controller
         foreach($likes as $like)
         {
             $discount = DiscountModel::find($like->content_id);
+            $company = CompanyModel::find($discount->company_id);
+            if($company)
+                $discount->company_logo = $company->logo_url;
+            else 
+                $dicsount->company_logo = null;
             if($discount)
             {
                 array_push($discounts, $discount);

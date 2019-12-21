@@ -37,7 +37,7 @@ class CompanyProfileController extends Controller
         $company->categories = CategoryModel::getCategoriesFromIDString($company->category_id);
         $company->areas = AreaModel::getAreasFromIDString($company->area_id);
         $company->likecount = LikeModel::getLikeCount($company->id, "company");
-        $user = Auth::user();
+        $user = User::find($company->user_id);
 
         $products = ProductModel::getProductsFromUser($user);   
 
@@ -46,7 +46,7 @@ class CompanyProfileController extends Controller
                 ->with("partner", $user)
                 ->with('has_product', count($products) > 0 ? 1 : 0)
                 ->with('products', $products)
-                ->with('like', LikeModel::isLike($user, $company, "company"))
+                ->with('like', LikeModel::isLike(Auth::user(), $company, "company"))
                 ->with('companyads', CompanyAdsModel::getCompanyAdsFromUser($user));
     }
 

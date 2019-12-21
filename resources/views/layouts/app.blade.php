@@ -175,7 +175,7 @@
                                 </li>
                                 <li>
                                     <a>
-                                        <i class="fas fa-bell" style='font-size: 12px; color: rgb(255, 201, 14);'></i> Favorite Company
+                                        <i class="fas fa-star" style='font-size: 12px; color: rgb(32, 112, 217);'></i> Favorite Company
                                     </a>
                                     <ul class="dropdown" style='width: 400px;' id="favorite-company">                                      
                                     
@@ -183,7 +183,7 @@
                                 </li>
                                 <li>
                                     <a>
-                                        <i class="fas fa-bell" style='font-size: 12px; color: rgb(255, 201, 14);'></i> Favorite Discount
+                                        <i class="fas fa-heart" style='font-size: 12px; color: rgb(206, 34, 82);'></i> Favorite Discount
                                     </a>
                                     <ul class="dropdown" style='width: 400px;' id="favorite-discount">                                      
                                     
