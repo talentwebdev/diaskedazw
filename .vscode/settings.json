@@ -1,32 +1,5 @@
 {
   "scm.defaultViewMode": "tree",
   "css.lint.compatibleVendorPrefixes": "warning",
-  "search.useIgnoreFiles": false,
-  "files.exclude": {
-    "node_modules": "explorerExcludedFiles",
-    "public/hot": "explorerExcludedFiles",
-    "public/storage": "explorerExcludedFiles",
-    "storage/*.key": "explorerExcludedFiles",
-    "vendor": "explorerExcludedFiles",
-    ".env": "explorerExcludedFiles",
-    ".phpunit.result.cache": "explorerExcludedFiles",
-    "Homestead.json": "explorerExcludedFiles",
-    "Homestead.yaml": "explorerExcludedFiles",
-    "npm-debug.log": "explorerExcludedFiles",
-    "yarn-error.log": "explorerExcludedFiles",
-    "*.jpg": "explorerExcludedFiles",
-    "*.mp4": "explorerExcludedFiles",
-    "*.png": "explorerExcludedFiles",
-    "*.jpeg": "explorerExcludedFiles",
-    "public/images/221563803450.jfif": "explorerExcludedFiles",
-    "public/images/overview/0221563634727.jfif": "explorerExcludedFiles",
-    "public/images/overview/0221563810905.webp": "explorerExcludedFiles",
-    "public/images/product/product221563634686.jfif": "explorerExcludedFiles",
-    "public/images/product/productcolor221563634698.jfif": "explorerExcludedFiles",
-    "public/videos/upload/151555573815.gif": "explorerExcludedFiles",
-    "public/videos/upload/151555573815.mp4": "explorerExcludedFiles",
-    "public/videos/upload/1515555α73815.gif": "explorerExcludedFiles",
-    "public/videos/upload/151555b573815.gif": "explorerExcludedFiles",
-    "public/videos/upload/555573815.svg": "explorerExcludedFiles"
-  }
+  "search.useIgnoreFiles": false
 }

@@ -1,29 +1,35 @@
 <div class="row">
     <div class="col-md-4">
-        <div class='communication-tip-container'>
-            <span class='tip-box' style="color:white;">Σημείωση</span>
-            <div class='communication-info-tip'>{{ $company->communication }} </div>
+         
+        <div class='communication-tip-container' style="margin-bottom:5px; border-radius:15px; border-color:#2196F3;">
+          
+           <div class='communication-info-tip' style=" border-color:#2196F3; margin-top:5px; ">  <i class="fa fa-cog fa-spin fa-3x fa-fw" style="color: #0295B2; font-size: 1.3em;"></i> {{ $company->communication }} </p></div>
+        </div>
+        <div class='communication-info-tip' style=" position:relative; left:3px; border-color:#ffffff;">
+        <div>
+            
+            <i class="fas fa-map-marker-alt" style="color: #2196F3; font-size: 1.3em;"></i> &nbsp; <label> {{ $partner->address }} </label>
         </div>
         <div>
-            <i class="fas fa-map-marker-alt"></i> &nbsp; <label> {{ $partner->address }} </label>
+            @if($company->email != null && $company->email  != "")
+            <i class="fas fa-at" style="color: #2196F3; font-size: 1.3em;"></i> &nbsp; <label> {{ $company->email }} </label>
+             @endif
+        </div>
+        
+        <div>
+            <i class="fas fa-phone-volume" style="color: #2196F3; font-size: 1.3em;"></i> &nbsp; <label> {{ $partner->telephone }} </label>
         </div>
         <div>
-            <i class="fas fa-at"></i> &nbsp; <label> {{ $company->email }} </label>
+            <i class="fas fa-mobile-alt" style="color: #2196F3;  font-size: 1.3em;"></i> &nbsp; <label> {{ $partner->mobile }} </label>
         </div>
-        <div>
-            <i class="fas fa-phone-volume"></i> &nbsp; <label> {{ $partner->telephone }} </label>
-        </div>
-        <div>
-            <i class="fas fa-mobile-alt"></i> &nbsp; <label> {{ $partner->mobile }} </label>
         </div>
     </div>
     <div class="col-md-4">
         <div class="form-group">
-            <span class='tip-box' style="color:white;">Στείλτε μας μύνημα!</span>
             <form id="inbox-info-form">
                 @csrf
                 <input type="hidden" value="{{ $partner->id }}" name='partner_id' id='partner_id' />
-                <div class="inbox-container" style="padding: 10px;">
+                <div class="inbox-container" style="padding: 10px; border-color:#2196F3;">
                     <div class="row">
                         <div class="col-md-6">
                             <label> Ονοματεπώνυμο: </label>
@@ -35,10 +41,10 @@
                         </div>
                         <div class="col-md-12">
                             <label> Μύνημα: </label>
-                            <textarea rows='4' name="message" id="message" class="form-control"></textarea>
+                            <textarea rows='3' name="message" id="message" class="form-control" ></textarea>
                         </div>
                         <div class="col-md-12">
-                            <button class="btn btn-primary" id='submit-inbox-btn' style="float:right;"> ΑΠΟΣΤΟΛΗ </button>
+                            <button class="btn btn-primary" id='submit-inbox-btn' style="position:relative; top:5px; float:right; font-size:10px;  background:#2196F3; border-radius:15px; "> ΑΠΟΣΤΟΛΗ </button>
                         </div>
                     </div>   
                 </div>
@@ -46,10 +52,12 @@
         </div>
     </div>
     <div class="col-md-4">
-
+        
+<div class="in0box-container" style="border: 1px solid; border-color:#2196F3; border-radius:4px;">
         <input type="hidden" value="{{$company->latitude}}"  id="latitude"/>
         <input type="hidden" value="{{$company->longitude}}" id="longitude"/>
-        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half" id="map">            
+        <div class="embed-responsive embed-responsive-16by9 z-depth-3-half" id="map">            
+        </div>
         </div>
     </div>
 </div>
@@ -61,6 +69,10 @@
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #AAA;
+}
+#map  {
+  border-radius: 10px;
+  height:242px;
 }
 </style>
 @endpush
@@ -91,7 +103,7 @@ function initMap(){
     var lng = $("#longitude").val();
     var map = new google.maps.Map(document.getElementById('map'), {
         center: new google.maps.LatLng(lat, lng), 
-        zoom: 10,
+        zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         disableDefaultUI: true,
         zoomControl: true,

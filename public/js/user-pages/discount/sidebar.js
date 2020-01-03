@@ -51,11 +51,11 @@
             var pre2 = "";
             if(index == 0){
                 pre1 = "" + 
-                '<label class="radio-btn-container">' + "ALL" + 
+                '<label class="radio-btn-container">' + "ΟΛΕΣ" + 
                     '<input type="radio" class="area" id="0" name="area">' + 
                     '<span class="checkmark"></span>' +
                 '</label>';
-                pre2 = '<li class="area" id="0"><a href="#">' + "ALL" + '</a></li>';
+                pre2 = '<li class="area" id="0"><a href="#">' + "ΟΛΕΣ" + '</a></li>';
             }else{
                 pre1 = "";
                 pre2 = "";
@@ -89,11 +89,11 @@
             var pre2 = "";
             if(index == 0){
                 pre1 = "" + 
-                '<label class="radio-btn-container">' + "ALL" + 
+                '<label class="radio-btn-container">' + "ΟΛΕΣ" + 
                     '<input type="radio" class="category" id="0" name="category">' + 
                     '<span class="checkmark"></span>' +
                 '</label>';
-                pre2 = '<li class="category" id="0"><a href="#">' + "ALL" + '</a></li>';
+                pre2 = '<li class="category" id="0"><a href="#">' + "ΟΛΕΣ" + '</a></li>';
             }else{
                 pre1 = "";
                 pre2 = "";

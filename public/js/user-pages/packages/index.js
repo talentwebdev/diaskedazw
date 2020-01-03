@@ -163,11 +163,11 @@
 
         if(width <= 1000)
         {
-            $(".promote-packages-container").children().attr("class", "col-md-6");
+            $(".promote-packages-container").children().attr("class", "col-md-6 ");
         }
         else if(width > 1000)
         {
-            $(".promote-packages-container").children().attr("class", "col-md-3");
+            $(".promote-packages-container").children().attr("class", "col-md-3 ");
         }
 
         // diaske card promote section

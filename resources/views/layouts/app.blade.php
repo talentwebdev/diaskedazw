@@ -144,7 +144,7 @@
                 <nav class="classy-navbar justify-content-between" id="uzaNav">
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="index.html">
+                    <a class="nav-brand" href="{{ route('/') }}">
                         <h5>Diask<img src="{{ asset('img/diask-img/ellinsds.png') }}" width="13" height="9" alt="ΕΛΛΗΝ"/>da<span>zw</span> </h5>
                     </a>
 
@@ -174,25 +174,30 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a>
-                                        <i class="fas fa-star" style='font-size: 12px; color: rgb(32, 112, 217);'></i> Favorite Company
+                                    <!--<a>
+                                        <i class="fas fa-star" style='font-size: 12px; color: rgb(32, 112, 217);'></i> Favorite
                                     </a>
-                                    <ul class="dropdown" style='width: 400px;' id="favorite-company">                                      
-                                    
+                                    <ul class="dropdown">                                      
+                                        <li>
+                                            <a><i class="fas fa-star" style='font-size: 12px; color: rgb(32, 112, 217);'></i> Favorite Company</a>
+                                            <ul class="dropdown" style='width: 400px;' id="favorite-company">                                      
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i class="fas fa-heart" style='font-size: 12px; color: rgb(206, 34, 82);'></i> Favorite Discount
+                                            </a>
+                                            <ul class="dropdown" style='width: 400px;' id="favorite-discount">                                      
+                                            
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a>
-                                        <i class="fas fa-heart" style='font-size: 12px; color: rgb(206, 34, 82);'></i> Favorite Discount
-                                    </a>
-                                    <ul class="dropdown" style='width: 400px;' id="favorite-discount">                                      
-                                    
-                                    </ul>
-                                </li>
+                                -->
                                 @endauth
                                 <li id='home-top-menu' style=""><a href="{{ route('home') }}">Αρχική</a></li>
                                 
-                                <li id='mall-top-menu' style=""><a href="#">Mall Υπηρεσιών </a>
+                                <!-- <li id='mall-top-menu' style=""><a href="#">Mall Υπηρεσιών </a>
                                 
                                     <ul class="dropdown" id='mall-submenu-container' >
                                         <div id='mall-submenu' style=''>
@@ -205,13 +210,35 @@
                                     -->
                                 </li>
 
-                                <li id='discount-top-menu' style=""><a href="{{ route('discount',['user_id'=>'0'] ) }}">Εκπτώσεις</a></li>    
+                                <li id='discount-top-menu' style=""><a href="#">Εκπτώσεις</a>
+                                
+                                <ul class="dropdown"> 
+                                 <li><a href="{{ route('discount',['user_id'=>'0'] ) }}"> <i class="fas fa-building" style='margin-left:5px;'></i> Επιχειρήσεις</a></li>
+                                 @auth
+                                        <li>
+                                            <a><i class="fas fa-heart" style='margin-left:5px;'></i>Αγαπήμενες Επιχειρήσεις</a>
+                                            <ul class="dropdown" style='width: 400px;' id="favorite-company">                                      
+                                            </ul>
+                                        </li>
+                                         @endauth
+                                          @auth
+                                        <li>
+                                            <a>
+                                                 <i class="fa fa-percent" style='margin-left:5px;'></i> Αγαπήμενες Εκπτώσεις
+                                            </a>
+                                            <ul class="dropdown" style='width: 400px;' id="favorite-discount">                                      
+                                            
+                                            </ul>
+                                        </li>
+                                        @endauth
+                                    </ul></li>  
+                                
                                 <li id='product-top-menu' style="">
                                     <a href="#">E-shop</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{ route('products') }}"><i class="fas fa-shopping-cart"></i> Κατάστημα</a></li>
+                                        <li><a href="{{ route('products') }}"><i class="fas fa-shopping-cart" style='margin-left:5px;'></i> Κατάστημα</a></li>
                                         @auth
-                                        <li><a href="{{ route('favorite') }}"><i class="fas fa-star"></i> Αγαπημένα</a></li>
+                                        <li><a href="{{ route('favorite') }}"><i class="fas fa-star" style='margin-left:5px;'></i> Αγαπημένα</a></li>
                                         @endauth
                                     </ul>
                                 </li>    
@@ -231,39 +258,39 @@
                                         </div>
                                         <li>
                                             <a href="{{ route('profile') }}" class="dropdown-item">
-                                                <i class="ni ni-single-02"></i>
+                                                <i class="ni ni-single-02" style='margin-left:5px;'></i>
                                                 <span>Λογαριασμός</span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" id='user-points' class="dropdown-item">
-                                                <i class="fas fa-coins"></i>
+                                                <i class="fas fa-coins" style='margin-left:5px;'></i>
                                                 <span>Πόντοι: {{ Auth::user()->points }}</span>
                                             </a>
                                         </li>
                                         @if(Auth::user()->isActiveEshop())
                                         <li>
                                             <a href="{{ route('userproducts') }}" class="dropdown-item">
-                                                <i class="fas fa-shopping-cart"></i>
+                                                <i class="fas fa-shopping-cart" style='margin-left:5px;'></i>
                                                 <span> Κατάστημα </span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{ route('subscription') }}" class="dropdown-item">
-                                                <i class="fa fa-bullseye"></i>
+                                                <i class="fa fa-bullseye" style='margin-left:5px;'></i>
                                                 <span> Διαφήμιση </span>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="{{ route('report') }}" class="dropdown-item">
-                                                <i class=" fa fa-bar-chart"></i>
+                                                <i class=" fa fa-bar-chart" style='margin-left:5px;'></i>
                                                 <span> Στατιστικά </span>
                                             </a>
                                         </li>
                                         @endif
                                          <li>
                                             <a href="#" class="dropdown-item">
-                                                <i class=" fa fa-clock-o"></i>
+                                                <i class=" fa fa-clock-o" style='margin-left:5px;'></i>
                                                 <span> {{ Helper::getRestDay() }} Ημέρες</span>
                                             </a>
                                         </li>
@@ -273,7 +300,7 @@
                                             <a class="dropdown-item" 
                                                onclick="event.preventDefault();
                                                              document.getElementById('logout-form').submit();" style='z-index:1000;'>
-                                                <i class="ni ni-user-run"></i>
+                                                <i class="ni ni-user-run"style='margin-left:5px;'></i>
                                                 <span>Έξοδος</span>
                                             </a>
 

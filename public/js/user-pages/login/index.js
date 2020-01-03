@@ -101,6 +101,7 @@
             testimonialSlide.owlCarousel({
                 items: 4,
                 margin: 25,
+                loop: true,
                 autoplay: true,
                 autoplayTimeout: 3000,
                 smartSpeed: 1500,
@@ -116,6 +117,14 @@
                     }
                 }
             });
+            
+            testimonialSlide.on('mouseleave',function(e){
+                testimonialSlide.trigger('play.owl.autoplay');
+            });
+            
+            testimonialSlide.on('mouseover',function(e){
+                testimonialSlide.trigger('stop.owl.autoplay');
+            });            
         }
         if ($.fn.owlCarousel) {           
             $.get("latestarticle")
@@ -479,6 +488,7 @@
             gallerySlides.owlCarousel({
                 items: 4,
                 margin: 25,
+                loop: true,
                 autoplay: true,
                 autoplayTimeout: 3000,  
                 smartSpeed: 1500,
@@ -494,6 +504,14 @@
                     }
                 }
             });
+            
+            gallerySlides.on('mouseleave',function(e){
+                gallerySlides.trigger('play.owl.autoplay');
+            });
+            
+            gallerySlides.on('mouseover',function(e){
+                gallerySlides.trigger('stop.owl.autoplay');
+            }); 
         }
         $.get('latestimages')
             .done(function(data){

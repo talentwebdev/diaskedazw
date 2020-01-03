@@ -70,7 +70,11 @@
                     "</a>"
 
         var el = $( html );
-        el.find( "img" ).attr( "src", item.img_url );
+        el.find( "div.not-active-show>img" ).attr( "src", item.img_url );
+        if(item.hover_img_url != undefined)
+            el.find( "div.active-show-display>img" ).attr( "src", item.hover_img_url );
+        else
+            el.find( "div.active-show-display>img" ).attr( "src", item.img_url );
         el.find( "#name" ).text( item.name );
         /*
         if( item.hasOwnProperty( 'link' ) )
@@ -78,6 +82,11 @@
             */
 
         el.appendTo( this.el );
+        el.mouseenter(function(e){
+            el.addClass("activated");
+        }).mouseleave(function(e){
+            el.removeClass("activated");
+        })
     }
 
     /**

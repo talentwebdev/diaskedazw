@@ -45,6 +45,7 @@
         <div>
             <img src="" />
         </div>
+        <!--
         <div style="display: flex;">
             <h5> Current Visit Users: </h5> &nbsp;
             @auth
@@ -53,6 +54,7 @@
             <a id="login-link"> Login </a>
             @endauth
         </div>
+        -->
 
 
         @if($has_product == 1)

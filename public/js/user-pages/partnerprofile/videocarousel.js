@@ -154,8 +154,8 @@
                 nav: true,
                 navText:["<i class='fas fa-angle-left'></i>", "<i class='fas fa-angle-right'></i>"],
                 margin: 30,
-                loop: false,
-                autoplay: false,
+                loop: true,
+                autoplay: true,
                 autoplayTimeout: 2000,
                 smartSpeed: 1000,
                 responsiveClass:true,
@@ -170,7 +170,15 @@
                         items: 4
                     }
                 }
-            })
+            });
+            
+            owl.on('mouseleave',function(e){
+                owl.trigger('play.owl.autoplay');
+            });
+            
+            owl.on('mouseover',function(e){
+                owl.trigger('stop.owl.autoplay');
+            });
         }
         var jsFolder = asset_url + "/plugins/carouselengine/";
         jQuery(".html5lightbox").html5lightbox({

@@ -16,15 +16,22 @@
                     </div>
                     
                     <div class="partner-info-link" style="display: flex; margin-left: 25px;">
+                          @if($company->facebook != null && $company->facebook != "")
                             <div class="facebook-url social-link">
                                 <a href="{{ $company->facebook }}"><i class="fab fa-facebook" style="color:#4267B2;"></i></a>
                             </div>
+                            @endif
+                             @if($company->youtube != null && $company->youtube != "")
                             <div class="youtube-url social-link">
+                                 
                                 <a href="{{ $company->youtube }}"><i class="fab fa-youtube" style="color:#FF0000;"></i></a>
                             </div>
+                            @endif
+                            @if($company->twitter != null && $company->twitter != "")
                             <div class="twitter-url social-link">
                                 <a href="{{ $company->twitter }}"><i class="fab fa-twitter" style="color:#1DA1F2;"></i></a>
                             </div>
+                            @endif
                             @if($company->instagram != null && $company->instagram != "")
                             <div class="instagram-url social-link">
                                 <a href="{{ $company->instagram }}"><i class="fab fa-instagram" style="color:#1DA1F2;"></i></a>

@@ -13,7 +13,7 @@
 		<div class='row partner-detail-row main-pos'>
 			<div class='col-md-3 partner-detail-image-container'>
 				<div style="border-bottom:transparent;">
-					<img src="{{ asset('img/bg-img/ellinas.png') }}" >
+					<!--<img src="{{ asset('img/bg-img/ellinas.png') }}" >-->
 				</div>
 			</div>
 			<div class='col-md-9' >

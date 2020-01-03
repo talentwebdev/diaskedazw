@@ -8,7 +8,7 @@
     <!-- Account detail -->
     <div class="col-md-4 partner-dashboard-panel">
       <div class="card" style='height:400px;'>
-        <div class="card-header"> <i class='fas fa-user'></i> Γενικές πληροφορίες λογαριασμού</div>
+        <div class="card-header"> <i class='fas fa-user'></i> Γενικές πληροφορίες Επιχείρησης</div>
         <div class="card-body">
           <div class="row">
             <div class="col-4">
@@ -24,8 +24,15 @@
                     <br />
                     <i class="fas fa-coins"></i> <span>{{ Auth::user()->points }}</span>
                     <br />
+                    
                   </p>
+                  
             </div>
+            <a href="{{ route('company.profile.index') }}"><button class="btn" style="position:relative; background-color: DodgerBlue; font-size: 12px; padding: 10px 14px; cursor: pointer; float:left; left:5%;  width:98%; "><i class="fa fa-eye"></i> Προβολη Ιστοσελιδας</button></a>
+            <a href="{{ route('company.dashboard.companyedit') }}"><button class="btn" style="position:relative; background-color: DodgerBlue; font-size: 12px; padding: 10px 14px; cursor: pointer; float:right; left:15%;  width:98%;  "><i class="fa fa-pencil"></i>Επεξεργασια Επιχειρησης</button></a>
+          
+
+
             </div>
         </div>
       </div>
@@ -56,6 +63,10 @@
 
 
 @push('page-styles')
+
+.btn:hover {
+  background-color: green;}
+  
 .btn-file {
     position: relative;
     overflow: hidden;

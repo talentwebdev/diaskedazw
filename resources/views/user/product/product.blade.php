@@ -126,7 +126,7 @@
                 <div class='sidebar-container col-md-3'>
                     @include('user.product.component.sidebar')
                 </div>
-                <div class='product-panel-container col-md-9'>
+                <div class='product-panel-container col-md-9 product-inner-content-container'>
                     @include('user.product.component.productpanel')
                 </div>
             </div>
@@ -166,4 +166,9 @@
 <link rel='stylesheet' href="{{ asset('css/user-pages/product/style.css') }}">
 <link rel='stylesheet' href="{{ asset('css/user-pages/partnerprofile/sitecarousel.css') }}">
 <link rel='stylesheet' href="{{ asset('plugins/select-component/select-component.css') }}">
+<style>
+.product-inner-content-container #companies-container{
+    min-height: 600px;
+}
+</style>
 @endpush

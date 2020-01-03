@@ -92,8 +92,8 @@
                 nav: true,
                 navText:["<i class='fas fa-angle-left'></i>", "<i class='fas fa-angle-right'></i>"],
                 margin: 30,
-                loop: false,
-                autoplay: false,
+                loop: true,
+                autoplay: true,
                 responsiveClass:true,
                 responsive: {
                     0: {
@@ -118,7 +118,15 @@
                         items: 7
                     }
                 }
-            })
+            });
+            
+            owl.on('mouseleave',function(e){
+                owl.trigger('play.owl.autoplay');
+            });
+            
+            owl.on('mouseover',function(e){
+                owl.trigger('stop.owl.autoplay');
+            });
         }
         
     }

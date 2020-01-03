@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="uza - Model Agency HTML5 Template">
+    <meta name="description" content="Καλωσορίσατε στo MALL Υπηρεσιών Diaskedazw">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -153,6 +153,7 @@
                         <!-- Nav Start -->
                         <div class="classynav">
                             <ul id="nav" >
+                                  
 
                                 @auth
                                  <li>
@@ -165,7 +166,12 @@
                                 </li>
                                 @endauth
                                 <li>
-                                  <a href='#'>Μενού</a>
+                                      <a href="{{ route('homepage') }}">
+                                          <i class="fa fa-home" style="font-size:16px; color:orange;"></i>  Αρχική
+                                      </a>
+                                    </li>
+                                <li>
+                                  <a href='#'>  <i class="fa fa-bars" style="font-size: 13px; color: green;"></i> Μενού</a>
                                   <ul class="dropdown">
                                     <li>
                                       <a class="nav-link waves-effect waves-light" href="{{ route('company.dashboard.home') }}">

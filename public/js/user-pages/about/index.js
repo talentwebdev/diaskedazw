@@ -112,7 +112,15 @@
                         items: 7
                     }
                 }
-            })
+            });
+            
+            owl.on('mouseleave',function(e){
+                owl.trigger('play.owl.autoplay');
+            });
+            
+            owl.on('mouseover',function(e){
+                owl.trigger('stop.owl.autoplay');
+            });
         }
         
     }
