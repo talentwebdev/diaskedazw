@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\PackageModel;
 use App\NotificationModel;
 use Illuminate\Support\Facades\Auth;
+use App\Support\CompanyStatistics;
 
 class User extends Authenticatable
 {
@@ -294,7 +295,7 @@ class User extends Authenticatable
      * @param partnerid
      * @param type
      */
-    public static function addEllinPoints($partnerid, $type)
+    public static function addEllinPoints($partnerid, $type, $source)
     {
         $partner = User::find($partnerid);
         $points = 0;
@@ -317,6 +318,9 @@ class User extends Authenticatable
         }
         
 
+        // add company statistics
+        if($source == "company")
+            CompanyStatistics::addMoney($partnerid, $points);
         // Add Notification
         if(Auth::user() != null)
             NotificationModel::addNotification(Auth::user()->id, 

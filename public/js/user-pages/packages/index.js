@@ -66,7 +66,7 @@
             else
             {
                 html = "" + 
-                    "<div class='col-md-3'>"+
+                    "<div class='item'>"+
                         "<div class='row'>" +
                             "<div class='col-md-4' style='position:relative;'>" +
                                 "<div style='position:relative; top:50%; transform: translateY(-50%);'>" +
@@ -95,7 +95,7 @@
                 $(html).appendTo('.promote-packages-container');
             
         });
-/*
+
         if($.fn.owlCarousel)
             { 
                 var owl = $('.promote-packages-container');
@@ -114,15 +114,15 @@
                             items: 2
                         },
                         900: {
-                            itmes: 3
+                            itmes: 2
                         },
                         1200: {
-                            items: 4
+                            items: 2
                         }
                     }
                 })
             }
-            */
+            
         responsivePackagePanel();   
     }
 
@@ -146,7 +146,8 @@
         var width = jQuery(window).width();
         if(width > 1100)
         {
-            $(".packages-container").children().attr("class", "col-my-md-5 packages-item-container");
+            //$(".packages-container").children().attr("class", "col-my-md-5 packages-item-container");
+            $(".packages-container").children().attr("class", "col-md-3 packages-item-container");
         }
         else if(width > 1000)
         {
@@ -163,11 +164,11 @@
 
         if(width <= 1000)
         {
-            $(".promote-packages-container").children().attr("class", "col-md-6 ");
+            //$(".promote-packages-container").children().attr("class", "col-md-6 ");
         }
         else if(width > 1000)
         {
-            $(".promote-packages-container").children().attr("class", "col-md-3 ");
+            //$(".promote-packages-container").children().attr("class", "col-md-6 ");
         }
 
         // diaske card promote section

@@ -10,6 +10,7 @@ use \App\CategoryModel;
 use App\LikeModel;
 use DB;
 use \App\Modules\CompanyPartner\Models\CompanySubscriptionModel;
+use App\Support\CompanyStatistics;
 
 class CompanyController extends Controller
 {
@@ -103,6 +104,7 @@ class CompanyController extends Controller
             return json_encode(array("response" => 0));
         }
 
+        CompanyStatistics::addLike($partner_id, "star");
 
         $company = CompanyModel::where('id', '=', $company_id)
                             ->get();

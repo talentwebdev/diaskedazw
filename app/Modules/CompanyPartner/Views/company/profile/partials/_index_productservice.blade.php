@@ -73,7 +73,7 @@ $(".promote-packages-container").ready(e => {
 $("body").click(e => {
     if($(e.target).hasClass("fa-star"))
     {
-        $.post("/likeproduct", {_token: csrf_token, product_id: $(e.target).attr("product-id")})
+        $.post("/likeproduct", {_token: csrf_token, content_source: "company", product_id: $(e.target).attr("product-id")})
             .done(data => {
                 if(data == "failed") return;
 

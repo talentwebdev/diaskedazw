@@ -55,10 +55,29 @@
         $("#home-menu").addClass("active");
     }
 
+    function dealWithVisit()
+    {
+        $.ajax('https://extreme-ip-lookup.com/json')
+        .then(
+            function success(response) {
+                $.get("{{route('addvisit')}}", {ip_address: response.query, visit_source: 'company', partner_id: {{$partner->id}}})
+                    .then(res => { "addvisit", console.log(res); })
+                    .fail(err => {});
+            },
+    
+            function fail(data, status) {
+
+                console.log('Request failed.  Returned status of',
+                            status);
+            }
+        );
+    }
+
     dealWithProductService();
     dealWithArticle();
     dealWithGallery();
     dealWithVideo();
     dealWithMenu();
+    dealWithVisit();
 </script>
 @endpush

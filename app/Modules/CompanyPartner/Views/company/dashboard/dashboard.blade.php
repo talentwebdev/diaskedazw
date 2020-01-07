@@ -28,9 +28,8 @@
                   </p>
                   
             </div>
-            <a href="{{ route('company.profile.index') }}"><button class="btn" style="position:relative; background-color: DodgerBlue; font-size: 12px; padding: 10px 14px; cursor: pointer; float:left; left:5%;  width:98%; "><i class="fa fa-eye"></i> Προβολη Ιστοσελιδας</button></a>
-            <a href="{{ route('company.dashboard.companyedit') }}"><button class="btn" style="position:relative; background-color: DodgerBlue; font-size: 12px; padding: 10px 14px; cursor: pointer; float:right; left:15%;  width:98%;  "><i class="fa fa-pencil"></i>Επεξεργασια Επιχειρησης</button></a>
-          
+            <a href="{{ route('company.profile.index') . '?company_id=' . Auth::user()->company->id }}"><button class="btn" style="position:relative; background-color: DodgerBlue; font-size: 12px; padding: 10px 14px; cursor: pointer; float:left; left:5%;  width:98%; "><i class="fa fa-eye"></i> Προβολη Ιστοσελιδας</button></a>
+            <a href="{{ route('company.dashboard.companyedit') }}"><button class="btn" style="position:relative; background-color: DodgerBlue; font-size: 12px; padding: 10px 14px; cursor: pointer; float:right; left:15%;  width:98%;  "><i class="fa fa-pencil"></i>Επεξεργασια Επιχειρησης</button></a>       
 
 
             </div>
@@ -40,11 +39,8 @@
 
     <!-- Statistic -->
     <div class="col-md-8 partner-dashboard-panel">
-      <div class="card" style='height:400px;'>
-        <div class="card-header"> <i class="fas fa-chart-line"></i> Στατιστικά </div>
-        <div class="card-body">
-          <div id="chartdiv"></div>
-        </div>
+      <div class="card">
+        @include("company.dashboard.partials._companystatistics")
       </div>
     </div>
   </div>
@@ -53,11 +49,6 @@
 
 
 @push('scripts')
-<script src="{{ asset('plugins/amchart/core.js') }}"></script>
-<script src="{{ asset('plugins/amchart/charts.js') }}"></script>
-<script src="{{ asset('plugins/amchart/animated.js') }}"></script>
-<script src="{{ asset('plugins/amchart/index.js') }}"></script>
-
 <script src="{{ asset('js/partner-pages/common/listcommon.js') }}"></script>
 @endpush
 

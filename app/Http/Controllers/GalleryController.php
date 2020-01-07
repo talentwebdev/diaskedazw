@@ -9,6 +9,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use App\NotificationModel;
 use App\LikeModel;
+use App\Support\CompanyStatistics;
 
 class GalleryController extends Controller
 {
@@ -71,14 +72,18 @@ class GalleryController extends Controller
         $gallery_id = request()->gallery_id;
         $likeType = request()->liketype;
         $partnerid = request()->partner_id;
+        $content_source = request()->content_source;
 
         if(Auth::user() == null || !Auth::user()->isActivated()) return "failed";
 
         // add/modify value in database for gallery
         if(LikeModel::addStatus(Auth::user()->id, $gallery_id, "gallery", $likeType))
             // add ellin point to partner & add push notification for getting ellin points
-            User::addEllinPoints($partnerid, $likeType);
+            User::addEllinPoints($partnerid, $likeType, $content_source);
 
+        // add company statistics
+        if($content_source == "company")
+            CompanyStatistics::addLike($partnerid, $likeType);
         //  return count of like
         if($likeType == "star")
             return LikeModel::getLikeCount($gallery_id, "gallery")["star"];

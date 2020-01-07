@@ -45,7 +45,7 @@
 
     <!-- ***** Promote Packages Area Start ***** -->
     <section class='uza-services-area' style='padding: 50px; background-color:rgba(0, 0, 0, 0.7);'>
-        <div class='row promote-packages-container'>
+        <div class='row owl-carousel owl-theme promote-packages-container'>
         </div>
     </section>
     <!-- ***** Promote Packages Area End ***** -->

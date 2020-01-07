@@ -53,7 +53,7 @@
             {
                 var gallery_id = $(e.target).attr("gallery-id");
 
-                $.get("{{ route('likegallery') }}", {gallery_id: gallery_id, liketype: type, partner_id: {{ $partner->id }}})
+                $.get("{{ route('likegallery') }}", {gallery_id: gallery_id, content_source: "company", liketype: type, partner_id: {{ $partner->id }}})
                     .then(function(data){
                         if(data == "failed") return;
 

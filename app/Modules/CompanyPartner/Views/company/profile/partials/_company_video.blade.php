@@ -135,7 +135,7 @@
                 {
                     el = $(e.target);
                     // send request
-                    $.get("{{ route('likevideo') }}", {video_id: $(e.target).attr("video-id"), liketype: type, partner_id: {{ $partner->id }}})
+                    $.get("{{ route('likevideo') }}", {video_id: $(e.target).attr("video-id"), content_source: "company", liketype: type, partner_id: {{ $partner->id }}})
                         .then(function(data){
                             if(data == "failed"){
                                 alert("you have to login first");

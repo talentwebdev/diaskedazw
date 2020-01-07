@@ -8,6 +8,7 @@ use App\LikeModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\NotificationModel;
+use App\Support\CompanyStatistics;
 
 class ArticleController extends Controller
 {
@@ -89,13 +90,19 @@ class ArticleController extends Controller
         $article_id = request()->article_id;
 		$likeType = request()->liketype;
 		$partnerid = request()->partner_id;
+		$content_source = request()->content_source;
 		
 		if(Auth::user() == null || !Auth::user()->isActivated()) return "failed";
 
 		// add status for video
 		if(LikeModel::addStatus(Auth::user()->id, $article_id, "article", $likeType))
-			User::addEllinPoints($partnerid, $likeType);
+			User::addEllinPoints($partnerid, $likeType, $content_source);
 
+		// add company statistics
+		if($content_source == "company")
+		{
+			CompanyStatistics::addLike($partnerid, $likeType);
+		}
 		// return count of like
 		if($likeType == "star")
 			return LikeModel::getLikeCount($article_id, "article")["star"];
@@ -233,7 +240,7 @@ class ArticleController extends Controller
 		if($partnerid != 'null' && $partnerid != '')
 		{
 			// add ellin point to partner & add push notification for getting ellin points
-			User::addEllinPoints($partnerid, "readmore");
+			User::addEllinPoints($partnerid, "readmore", "partnerprofile");
 
 			//  get like count and get if this user activated like button
 			$likeCount = LikeModel::getLikeCount($articleid, "article");

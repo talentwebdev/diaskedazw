@@ -101,7 +101,7 @@
                 
                 if(!$(e.target).hasClass("fa-company")){
                     var article_id = $(e.target).attr("article-id");
-                    $.get("{{ route('likearticle') }}", {article_id: article_id, liketype: type, partner_id: {{ $partner->id }}})
+                    $.get("{{ route('likearticle') }}", {article_id: article_id, content_source: "company", liketype: type, partner_id: {{ $partner->id }}})
                         .then(function(data){
                             if(data == "failed")
                             {

@@ -55,4 +55,8 @@ Route::group(['middleware' => ['web'], 'prefix'=>'company', 'namespace' => 'App\
         Route::post('/store', ['uses' => 'CompanyInboxController@store', 'as' => 'company.inbox.store']);
     });
 
+    Route::group(['middleware' => ['auth', 'company.partner']], function(){
+        Route::get('/get', ['uses' => 'CompanyStatisticsController@get', 'as' => 'company.statistics.get']);
+    });
+
 });

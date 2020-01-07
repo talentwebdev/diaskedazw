@@ -17,6 +17,7 @@ use App\ProductCategoryModel;
 
 use Mail;
 use \App\Mail\SendProductPaymentEmail;
+use App\Support\CompanyStatistics;
 
 class ProductController extends Controller
 {
