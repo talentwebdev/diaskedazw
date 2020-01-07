@@ -3,6 +3,7 @@ var main_services = [
 {
         "name": "Mind & Seminars",
         "img_url": asset_url + "/" + "img/services/service_ot/seminar.png",
+        "hover_img_url": asset_url + "/" + "img/services/service_ot/seminars.png",
         "sub_component": [            
             
                ],
@@ -14,7 +15,7 @@ var main_services = [
     {
         "name": "Μυαλό Ψυχή & Σώμα",
         "img_url": asset_url + "/" + "img/services/service_ot/health.png",
-        "hover_img_url": asset_url + "/" + "img/services/service_ot/seminars.png",
+        "hover_img_url": asset_url + "/" + "img/services/service_ot/healths.png",
         "sub_component": [
             
         ],
@@ -24,6 +25,7 @@ var main_services = [
 {
         "name": "Φαγητό & Ποτό",
         "img_url": asset_url + "/" + "img/services/service_ot/food.png",
+        "hover_img_url": asset_url + "/" + "img/services/service_ot/foods.png",
         "sub_component": [],
         "adv_img": asset_url + "/" + "img/services/service_ot/foods.png",
         "description":""
@@ -33,6 +35,7 @@ var main_services = [
     {
         "name": "Διασκέδαση",
         "img_url": asset_url + "/" + "img/services/service_ot/fun.png",
+        "hover_img_url": asset_url + "/" + "img/services/service_ot/funs.png",
         "sub_component": [],
         "adv_img": asset_url + "/" + "img/services/service_ot/funs.png",
         "description":"" /*, "link": {
@@ -44,6 +47,7 @@ href: "https://diaskedazw.com/"
     {
         "name": "Κινούμενα Μέσα (αυτοκίνηση)",
         "img_url": asset_url + "/" + "img/services/service_ot/car.png",
+        "hover_img_url": asset_url + "/" + "img/services/service_ot/car_s.png",
         "sub_component": [],
         "adv_img": asset_url + "/" + "img/services/service_ot/car_s.png",
         "description":""
@@ -53,6 +57,7 @@ href: "https://diaskedazw.com/"
     {
         "name": "Σπίτι του Μέλλοντος/Ηouse of the Future",
         "img_url": asset_url + "/" + "img/services/service_ot/house.png",
+        "hover_img_url": asset_url + "/" + "img/services/service_ot/houses.png",
         "sub_component": [
            
         ],
@@ -63,6 +68,7 @@ href: "https://diaskedazw.com/"
     {
         "name": "ECO Energy",
         "img_url": asset_url + "/" + "img/services/service_ot/eco-01.png",
+        "hover_img_url": asset_url + "/" + "img/services/service_ot/ecos-01.png",
         "sub_component": [],
         "adv_img": asset_url + "/" + "img/services/service_ot/ecos-01.png",
         "description":""
@@ -71,6 +77,7 @@ href: "https://diaskedazw.com/"
     {
         "name": "Εκπτώσεις Diaskedazw & E-shop",
         "img_url": asset_url + "/" + "img/services/service_ot/newdisc.png",
+        "hover_img_url": asset_url + "/" + "img/services/service_ot/newdiscs.png",
         "sub_component": [
         ],
         "adv_img": asset_url + "/" + "img/services/service_ot/newdiscs.png",
@@ -80,6 +87,7 @@ href: "https://diaskedazw.com/"
     {
         "name": "Business Support",
         "img_url": asset_url + "/" + "img/services/service_ot/buis.png",
+        "hover_img_url": asset_url + "/" + "img/services/service_ot/buiss.png",
         "sub_component": [
             
          ],  
@@ -115,6 +123,7 @@ href: "https://diaskedazwdiscounts.com/"
     {
         "name": "Καριέρα ΖWής",
         "img_url": asset_url + "/" + "img/services/service_ot/efkeria-01.png",
+        "hover_img_url": asset_url + "/" + "img/services/service_ot/ellins-01.png",
         "class": "push-bottom",
         "sub_component": [
             

@@ -3,7 +3,7 @@
     @foreach($images as $image)
         <div class="col-sm-6 col-md-4 image-gallery-item">
             <a class="lightbox" gallery-id="{{ $image->id }}" href="{{ asset($image->img_url) }}">
-                <img gallery-id="{{ $image->id }}" src="{{ asset($image->img_url) }}" alt="Sky">
+                <img style="height:200px;" gallery-id="{{ $image->id }}" src="{{ asset($image->img_url) }}" alt="Sky">
             </a>
             <h4 style='text-align:center; margin-top: -10px; word-wrap:break-word;'>{{ $image->title }}</h4>
             <div style=''>

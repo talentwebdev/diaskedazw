@@ -33,7 +33,7 @@
         if(services.hasOwnProperty('adv_img'))
         {
             $( '#adv-service' )
-                        .css('width', width * 0.3 + "px")
+                        .css('width', width * 0.6 + "px")
                         .css( 'display', 'block' )
                         .addClass( 'scaleup' );
             $( "#adv-service img" ).attr( "src", services.adv_img );

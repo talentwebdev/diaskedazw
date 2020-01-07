@@ -99,7 +99,7 @@
 <script src="{{asset('js/validator.min.js')}}"></script>
 <script>
     function verifyCallback(){
-        //$("#submit").css('display', 'block');
+        $("#submit").css('display', 'block');
     }
     function onloadCallback(){
         grecaptcha.render('example63', {
@@ -109,6 +109,14 @@
         });
     }
     $("#contactus-top-menu").addClass('current-item');
+</script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LfcWssUAAAAAJs89Ewb-TMamW22DWUy_oav-y6m"></script>
+<script>
+grecaptcha.ready(function() {
+    grecaptcha.execute('6LfcWssUAAAAAJs89Ewb-TMamW22DWUy_oav-y6m', {action: 'homepage'}).then(function(token) {
+       ...
+    });
+});
 </script>
 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"></script>
 <script>

@@ -18,7 +18,7 @@
         $("#article-md").load("{{ route('company.profile.articlepartial') }}",
         {
             _token: "{{ csrf_token() }}",
-            count: 6,
+            count: 9,
             partner_id: {{ $partner->id }}
         }, function(response){});
     }
@@ -28,7 +28,7 @@
         $("#image-md").load("{{ route('company.profile.imagepartial') }}",
         {
             _token: "{{ csrf_token() }}",
-            count: 6,
+            count: 9,
             partner_id: {{ $partner->id }}
         },
         function(response){
@@ -41,7 +41,7 @@
         $("#video-md").load("{{ route('company.profile.videopartial') }}",
         {
             _token: "{{ csrf_token() }}",
-            count: 6,
+            count: 9,
             partner_id: {{ $partner->id }}
         },
         function(resoponse){

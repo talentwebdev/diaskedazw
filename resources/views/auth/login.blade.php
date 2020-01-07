@@ -292,9 +292,9 @@ ENAΣ ΧΩΡΟΣ Ο ΟΠΟΙΟΣ ΜΠΟΡΕΙ ΝΑ ΣΤΕΓΑΣΕΙ ΚΑΙ ΝΑ 
 <!-- ***** Package carousel Section **** -->
 <section class='uza-portfolio-area' style='position:relative; padding-left: 0%; padding-right: 0%;'>
     <p class='package-slide-text'>ΠΑΚΕΤΑ</p>
-    <div id="carousel" style='position:relative;'>
-        <a id="prev" class='left-button' style='position: absolute; left:50px; top:30%; font-weight: 800; font-size:xx-large; color: #aaa;'><i class='fas fa-angle-left'></i></a>
-        <a id="next" class='right-button' style='position: absolute; right:50px; top:30%; font-weight: 800; font-size:xx-large; color: #aaa;'><i class='fas fa-angle-right'></i></a>
+    <div id="carousel" style='position:relative; '>
+        <a id="prev" class='left-button' style='position: absolute; left:50px; top:30%; font-weight: 800; font-size:xx-large; color: #20A8D8;'><i class='fas fa-angle-left'></i></a>
+        <a id="next" class='right-button' style='position: absolute; right:50px; top:30%; font-weight: 800; font-size:xx-large; color: #20A8D8;'><i class='fas fa-angle-right'></i></a>
     </div>
 </section>
 <!-- ***** Package carousel section End ***** -->

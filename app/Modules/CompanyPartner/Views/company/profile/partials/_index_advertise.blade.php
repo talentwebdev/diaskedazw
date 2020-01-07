@@ -10,12 +10,12 @@
         </div>
         <div class="col-md-4 video-area">
             <div>
-                <video loop="loop" width="100%" id="mainVideo" controls>
+                <video loop="loop" width="100%" height="205px" id="mainVideo" controls autoplay>
                     <source src="{{ asset($company->company_video) }}" type="video/mp4">
                     <source src="video.ogg" type="video/ogg">
                     <source src="video.webm" type="video/webm">
-                    <object data="{{ asset('video/diaskedazo.mp4') }}" width="100%" height="380">
-                    <embed src="video.swf" width="100%" height="380">
+                    <object data="{{ asset('video/diaskedazo.mp4') }}" width="100%" height="205">
+                    <embed src="video.swf" width="100%" height="205">
                     </object>
                 </video>
             </div>

@@ -9,6 +9,7 @@
                     <div class="row">
                         <img src="{{ asset($ads->adsimage_url) }}" alt="" style="width: 100%;">
                     </div>
+                    <!--
                     <div class="row">
                         <div class="col-md-3">
                             <img src="{{ asset($ads->logoimage_url) }}" alt="" style="width: 100%;">
@@ -22,6 +23,7 @@
                             </h5>
                         </div>
                     </div>
+                    -->
                 </div>
                 @endforeach
             </div>
