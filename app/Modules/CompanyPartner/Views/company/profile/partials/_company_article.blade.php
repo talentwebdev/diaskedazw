@@ -31,7 +31,7 @@
 </div>
 @if(count($articles) == 0)
 <script>
-    $("#image-tab").hide();
+    $("#article-tab").hide();
 </script>
 @endif
 <script>

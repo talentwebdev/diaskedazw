@@ -39,6 +39,10 @@ Route::group(['middleware' => ['web'], 'prefix'=>'company', 'namespace' => 'App\
         });
     });
 
+    Route::group(['middleware' => [], 'prefix' => 'profile'], function(){
+        Route::get('/index/{companyname}', ['uses' => 'CompanyProfileController@indexcompanyname', 'as' => 'company.profile.indexcompanyname']);
+    });
+
     Route::group(['middleware' => ['company.select'], 'prefix' => 'profile'], function(){
 
         Route::get("/index", ['uses' => "CompanyProfileController@index", 'as' => 'company.profile.index']);

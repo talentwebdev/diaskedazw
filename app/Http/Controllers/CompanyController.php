@@ -40,7 +40,7 @@ class CompanyController extends Controller
                                 ->get();
         else if($area == '' || $category == '' || $area == '0' || $category == '0')
             //return CompanyModel::inRandomOrder()->get();
-            return CompanyModel::get();
+            return CompanyModel::inRandomOrder()->get();
         else
             return CompanyModel::where(['area_id'=>$area, 'category_id'=>$category])
                             ->inRandomOrder()

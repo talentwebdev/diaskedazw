@@ -6,14 +6,14 @@
         <span></span> <i class="fa fa-caret-down"></i>
     </div>
 </div>
-<div class="card-body">
+<div class="card-body" >
     <div class="row">
         <div class="col-md-2 chart-legend visitors selected" type="visitors">
-            <div class='legend-title' style="color:#707070;"> Visitors </div>
+            <div class='legend-title' style="color:#707070;"> Επισκέπτες </div>
             <div class='count-number' id="visitors_count"> </div>
         </div>
         <div class="col-md-2 chart-legend newvisitors selected" type="newvisitors">
-            <div class='legend-title' style="color:#707070;">New Visitors</div>
+            <div class='legend-title' style="color:#707070;">Νέοι Επισκέπτες</div>
             <div class='count-number' id="newvisitors_count"></div>
         </div>
         <div class="col-md-2 chart-legend star selected" type="star">
@@ -190,71 +190,77 @@
     } 
 </script>
 <!-- Chart Comport -->
+
+
+
 <script type="text/javascript">    
 
     var color = Chart.helpers.color;
     var ctx = document.getElementById('chart').getContext('2d');
+    ctx.canvas.width = 1000;
+
+		ctx.canvas.height = 250;
     var cfg = {
         data: {
             datasets: [
                 {
-                    label: 'Visitors',
+                    label: 'Επισκέπτες',
                     backgroundColor: color(window.chartColors.visitors).alpha(0.5).rgbString(),
                     borderColor: window.chartColors.visitors,
-                    type: 'line',
-                    pointRadius: 0,
-                    fill: false,
-                    lineTension: 0,
+                    type: 'bar',
+                    pointRadius: 1,
+                    fill: true,
+                    lineTension: 1,
                     borderWidth: 2
                 },
                 {
-                    label: 'New Visitors',
+                    label: 'Νέοι Επισκέπτες',
                     backgroundColor: color(window.chartColors.newvisitors).alpha(0.5).rgbString(),
                     borderColor: window.chartColors.newvisitors,
-                    type: 'line',
-                    pointRadius: 0,
-                    fill: false,
-                    lineTension: 0,
+                    type: 'bar',
+                    pointRadius: 1,
+                    fill: true,
+                    lineTension: 1,
                     borderWidth: 2
                 },
                 {
-                    label: 'Star',
+                    label: 'Αστέρια',
                     backgroundColor: color(window.chartColors.star).alpha(0.5).rgbString(),
                     borderColor: window.chartColors.star,
-                    type: 'line',
-                    pointRadius: 0,
-                    fill: false,
-                    lineTension: 0,
+                    type: 'bar',
+                    pointRadius: 1,
+                    fill: true,
+                    lineTension: 1,
                     borderWidth: 2
                 },
                 {
-                    label: 'Clap',
+                    label: 'Χειροκροτήματα',
                     backgroundColor: color(window.chartColors.clap).alpha(0.5).rgbString(),
                     borderColor: window.chartColors.clap,
-                    type: 'line',
-                    pointRadius: 0,
-                    fill: false,
-                    lineTension: 0,
+                    type: 'bar',
+                    pointRadius: 1,
+                    fill: true,
+                    lineTension: 1,
                     borderWidth: 2
                 },
                 {
-                    label: 'Heart',
+                    label: 'Αγαπημένα',
                     backgroundColor: color(window.chartColors.heart).alpha(0.5).rgbString(),
                     borderColor: window.chartColors.heart,
-                    type: 'line',
-                    pointRadius: 0,
-                    fill: false,
-                    lineTension: 0,
+                    type: 'bar',
+                    pointRadius: 1,
+                    fill: true,
+                    lineTension: 1,
                     borderWidth: 2
                 },
                 {
-                    label: 'Points',
+                    label: 'Πόντους',
                     backgroundColor: color(window.chartColors.points).alpha(0.5).rgbString(),
                     borderColor: window.chartColors.points,
-                    type: 'line',
-                    pointRadius: 0,
-                    fill: false,
-                    lineTension: 0,
+                    type: 'bar',
+                    pointRadius: 1,
+                    fill: true,
+                    lineTension: 1,
                     borderWidth: 2
                 }
             ]
@@ -291,7 +297,7 @@
                     },
                     scaleLabel: {
                         display: true,
-                        labelString: 'Closing price ($)'
+                        labelString: 'Γενικές Πληροφορίες (επιχείρησης)'
                     }
                 }]
             },
@@ -353,4 +359,5 @@
     });
     
 </script>
+
 @endpush

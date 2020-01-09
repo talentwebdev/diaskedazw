@@ -50,6 +50,32 @@ class CompanyProfileController extends Controller
                 ->with('companyads', CompanyAdsModel::getCompanyAdsFromUser($user));
     }
 
+    public function indexcompanyname($companyname)
+    {
+        $companyname = str_replace("_", " ", $companyname);
+        $companies = CompanyModel::where('name', '=', $companyname)->get();
+        if(count($companies) == 0)
+            return redirect()->route('home');
+        
+        $company = $companies[0];
+        request()->session()->put("company", $company->id);
+        $name = $company->name;
+        $company->categories = CategoryModel::getCategoriesFromIDString($company->category_id);
+        $company->areas = AreaModel::getAreasFromIDString($company->area_id);
+        $company->likecount = LikeModel::getLikeCount($company->id, "company");
+        $user = User::find($company->user_id);
+
+        $products = ProductModel::getProductsFromUser($user);   
+
+        return view("company.profile.index")
+                ->with("company", $company)
+                ->with("partner", $user)
+                ->with('has_product', count($products) > 0 ? 1 : 0)
+                ->with('products', $products)
+                ->with('like', LikeModel::isLike(Auth::user(), $company, "company"))
+                ->with('companyads', CompanyAdsModel::getCompanyAdsFromUser($user));
+    }
+
     public function productservice()
     {
         $partnerid = request()->partner_id;

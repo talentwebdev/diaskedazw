@@ -28,7 +28,7 @@ class ArticleSupport
 		
 			$articles = ArticleModel::where( 'partner_id', '=', $partnerid )
 								->with( 'user' )
-								->orderBy('created_at')
+								->orderBy('created_at', 'desc')
 								->take($count)								
 								->get(['created_at', 'poster_img', 'title', 'summary', 'id', 'partner_id']);
 		
