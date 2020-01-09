@@ -29,15 +29,15 @@
                                 {{ $area->name }}
                             @endforeach
                     </a>
-                    <li class="nav-item">
+                    <li class="nav-item" id="image-tab">
                         <a class="nav-link active" id="image-tab-md" data-toggle="tab" href="#image-md" role="tab" aria-controls="image-md"
                         aria-selected="false"><i class="fas fa-images"></i> Εικόνες</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item" id="article-tab">
                         <a class="nav-link" id="article-tab-md" data-toggle="tab" href="#article-md" role="tab" aria-controls="article-md"
                         aria-selected="true"><i class='fas fa-newspaper'></i>  Άρθρα</a>
                     </li>                    
-                    <li class="nav-item">
+                    <li class="nav-item" id="video-tab">
                         <a class="nav-link" id="video-tab-md" data-toggle="tab" href="#video-md" role="tab" aria-controls="video-md"
                         aria-selected="false"><i class="fas fa-video"></i> Βίντεο</a>
                     </li>

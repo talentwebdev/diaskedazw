@@ -68,7 +68,7 @@
                 html = "" + 
                     "<div class='item'>"+
                         "<div class='row'>" +
-                            "<div class='col-md-4' style='position:relative;'>" +
+                            "<div class='col-md-3' style='position:relative;'>" +
                                 "<div style='position:relative; top:50%; transform: translateY(-50%);'>" +
                                     "<img src='" + asset_url + "/" + element.img_url + "' style='width:100%; border-radius: 50%;'>" +
                                     "<p style='text-align:center; margin-top: 20px; color:#F00; font-weight:bold;'>"                                        
@@ -76,7 +76,7 @@
                                     "</p>" +
                                 "</div>" +
                             "</div>" +
-                            "<div class='col-md-8' style='text-align:center;'>" +
+                            "<div class='col-md-9' style='text-align:center;'>" +
                                 "<div>"+
                                 "<h5 style='color:#FFF; font-weight:bold; font-size:16px;'><i class='fas fa-star' style='color:#FF0;'></i>"+element.name+"</h5>" +
                                 "<p class='description' style='word-wrap:break-word; text-align:center; line-height:2em; height:8em; overflow:hidden;text-overflow: ellipsis; display: -webkit-box;-webkit-line-clamp: 4; -webkit-box-orient: vertical;'>"+element.description+"</p>" +
@@ -120,7 +120,12 @@
                             items: 2
                         }
                     }
-                })
+                });
+                owl.on("dragged.owl.carousel", function(){
+                    $(".owl-item").css("border-right", "0px solid");
+                    var actives = $(".owl-item.active");
+                    $(actives[0]).css("border-right", "1px solid #FFF");
+                });
             }
             
         responsivePackagePanel();   

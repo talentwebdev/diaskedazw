@@ -36,7 +36,11 @@
         @endforeach
     </div>
 </div>
-
+@if(count($videos) == 0)
+<script>
+    $("#video-tab").hide();
+</script>
+@endif
 <script>
 (function($){
     function dealWithVideoLightBox()

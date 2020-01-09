@@ -2664,7 +2664,7 @@ div.cookie-policy{
 /* discount carousel border*/
 @media only screen and (min-width: 500px)
 {
-    .promote-packages-container .owl-item{
+    .promote-packages-container .owl-item.active:nth-of-type(1){
         border-right: 1px solid #FFF;
     }
     .no-border{

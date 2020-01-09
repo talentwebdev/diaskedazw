@@ -75,9 +75,6 @@
 }
 /** prmote package section **/
 /** promote package and company **/ 
-.promote-packages-container > div{
-    border-right: 1px solid #FFF;
-}
 @media only screen and (min-width:769px)
 {     
     .promote-packages-container > div:last-of-type{

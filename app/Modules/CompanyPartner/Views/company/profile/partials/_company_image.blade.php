@@ -17,6 +17,11 @@
     @endforeach
     </div>    
 </div>
+@if(count($images) == 0)
+<script>
+    $("#image-tab").hide();
+</script>
+@endif
 <script>
 (function($){
     'use strict'; 
