@@ -29,13 +29,28 @@
             </div>
             
             <h4> Μενού </h4>
-            <div id='home-menu' class="menu-content"> <a href='{{ route("company.profile.index") }}'>Αρχική</a> </div>
-            <div id='gallery-menu' class="menu-content"> <a href='{{ route("company.profile.image") }}'>Όλες οι Εικόνες</a> </div>   
-            <div id='video-menu' class="menu-content"> <a href='{{ route("company.profile.video") }}'>Όλα τα Videos</a> </div>
-            <div id='article-menu' class="menu-content"> <a href='{{ route("company.profile.article") }}'>Όλα τα Άρθρα</a> </div>                 
-            <div id='gallery-menu' class="menu-content"> <a href='' user-id="{{ $partner->id }}" id='eshop-link'>E-shop</a> </div>        
-            <div id='website-menu' class="menu-content"> <a href='{{ $company->link_url }}'>Ιστοσελίδα</a> </div>        
+            <div id='home-menu'  class="menu-content"> <i class="fas fa-home" style=" position:relative; left:-5px; color:grey;"></i> <a href='{{ route("company.profile.index") }}'>    Αρχική</a> </div>
+            <div id='gallery-menu' class="menu-content"><i class="fas fa-images" style="position:relative; left:-5px; color:grey;"></i> <a href='{{ route("company.profile.image") }}'>    Όλες οι Εικόνες</a> </div>   
+            <div id='video-menu' class="menu-content"> <i class="fas fa-video" style="position:relative; left:-5px; color:grey;"></i><a href='{{ route("company.profile.video") }}'>    Όλα τα Videos</a> </div>
+            <div id='article-menu' class="menu-content"><i class="far fa-newspaper" style="position:relative; left:-5px; color:grey;"></i> <a href='{{ route("company.profile.article") }}'>    Όλα τα Άρθρα</a> </div>                 
+            <div id='gallery-menu' class="menu-content"> <i class="fas fa-shopping-cart" style="position:relative; left:-5px; color:grey;"></i><a href='' user-id="{{ $partner->id }}" id='eshop-link'>    E-shop</a> </div>        
+            <div id='website-menu' class="menu-content"> <i class="fas fa-home" style="position:relative; left:-5px; color:grey;"></i> <a href='{{ $company->link_url }}'>    Ιστοσελίδα</a> </div> 
+            <div id='website-menu' class="menu-content" style="background:lightblue;"> <i class="fas fa-building" style="position:relative; left:-5px; color:grey;"></i><a href='https://diaskedazwdiscounts.com/discount?user_id=0'>  Όλες οι Επιχειρήσεις</a> </div> 
 
+<style>
+.menu-content:hover {
+        background-color:lightblue;
+        color:#fff;
+        
+    
+        > a {
+          color:#fff;
+        }
+
+
+/* small screens */
+
+</style>
    
             <!-- <form id="myform" role="form"  method="get" action="{{URL::to('product')}}">
                 <input type = "hidden" value="{{$partner->id}}" name="user_id" />            

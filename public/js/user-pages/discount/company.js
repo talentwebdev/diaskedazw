@@ -60,8 +60,8 @@
                         "</div>" +
                         "<div class='amazingcarousel-flip'>" + 
                             "<div style='width:90%; margin:auto; word-wrap:break-word; padding: 10px; background-color:#AAA; border-radius:5px; text-align:center; margin-top:5px;'>" + company.name + "</div>" +
-                            '<div class="amazingcarousel-title" style="color:red;  text-align:center; position:relative; font-size:25px;">' + (company.discount_cnt != 0 ? (company.discount_cnt + "%") : "") + "</div>" + 
-                            '<div class="amazingcarousel-description" style="text-align:center; color:#222222; height: 7vh; overflow: auto;">' + company.discount_info + '</div>' +
+                            '<div class="amazingcarousel-title" style="color:red;  text-align:center; position:relative; font-size:25px; top:-20px;">' + (company.discount_cnt != 0 ? (company.discount_cnt + "%") : "") + "</div>" + 
+                            '<div class="amazingcarousel-description" style="position:relative; top:-15px; text-align:center; color:#222222; height: 12vh; overflow: auto;">' + company.discount_info + '</div>' +
                         "</div>" + 
                     "</div>" +
                     "<div class='my-button' company-id='"+company.id+"' style='width:75%; margin:auto; word-wrap:break-word; padding: 5px; background-color:#2196F3; color: #FFF; font-weight: bold; border-radius: 10px; text-align:center; margin-top: 30px; '>Ενδιαφέρομαι</div>" + 

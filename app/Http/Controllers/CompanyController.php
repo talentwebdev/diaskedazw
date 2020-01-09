@@ -49,13 +49,15 @@ class CompanyController extends Controller
 
     public function fetchPromoteCompanies()
     {
-        $subscribedUsers = CompanySubscriptionModel::all();
+        $subscribedUsers = CompanySubscriptionModel::inRandomOrder()->get();
         $companyPromotes = array();
         foreach($subscribedUsers as $subscription)
         {
             if($subscription->end_time < now()) continue;
 
-            $company = CompanyModel::where("user_id", '=', $subscription->user_id)->get();
+            $company = CompanyModel::where("user_id", '=', $subscription->user_id)
+                                        ->inRandomOrder()
+                                        ->get();
             if(count($company) == 0) continue;
             
             array_push($companyPromotes, $company->first());
